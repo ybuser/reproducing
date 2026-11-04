@@ -1,10 +1,10 @@
 {
   "status": "uploading",
   "planned_commits": 12,
-  "completed_data_commits": 8,
-  "uploaded_parts": 16,
+  "completed_data_commits": 9,
+  "uploaded_parts": 18,
   "total_parts": 20,
   "chatgpt_handoff_pending": true,
   "zip_sha256": "d2e157b3b7e53ca234aaeb9622481780d09fc4bdd7877d4e8a0c7088c992893a",
-  "updated_at": "2026-11-04T15:33:36.748769+09:00"
+  "updated_at": "2026-11-04T15:33:59.257190+09:00"
 }
