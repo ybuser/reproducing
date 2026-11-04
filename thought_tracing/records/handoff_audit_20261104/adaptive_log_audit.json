@@ -1,0 +1,125 @@
+{
+  "audit_status": "passed",
+  "generated_at": "2026-11-04T15:45:40.619658+09:00",
+  "scope": "Read-only persisted-log invariants for latest case_attempt_id; no model inference or score retuning",
+  "counts": {
+    "result_records": 600,
+    "status:ok": 595,
+    "initialized": 400,
+    "initial_format_repairs": 0,
+    "completed_step_records": 908,
+    "logical_hypothesis_evaluations": 2284,
+    "bypassed": 200,
+    "status:error": 5
+  },
+  "completed_steps_by_evaluator": {
+    "state_only_plausibility": 335,
+    "action_likelihood": 573
+  },
+  "deleted_by_evaluator": {
+    "state_only_plausibility": 9,
+    "action_likelihood": 102
+  },
+  "initial_count_distribution": {
+    "1": 49,
+    "3": 224,
+    "5": 5,
+    "4": 19,
+    "2": 103
+  },
+  "mean_initial_count_all_initialized": 2.57,
+  "last_recorded_count_examples": 400,
+  "mean_last_recorded_count_including_partial_errors": 2.2925,
+  "completed_trace_count": 395,
+  "mean_final_count_successful_traces_only": 2.288607594936709,
+  "summary_records": 900,
+  "mean_summary_count": 2.39,
+  "pruned_examples": 96,
+  "first_prune_step_distribution_zero_based": {
+    "1": 27,
+    "0": 59,
+    "2": 8,
+    "3": 2
+  },
+  "started_or_became_single": 72,
+  "failed_examples": [
+    {
+      "row_id": 218,
+      "error": "Unparseable six-option evaluation",
+      "last_stage": "adaptive.state_only_plausibility",
+      "unparseable_responses": [
+        {
+          "ordinal": 27,
+          "raw_output": "From Lucas's perspective, the updated hypothesis that he believed he had completed his task of moving the boots and was now outside the workshop is very plausible. There is no indication that Lucas observed Aiden's actions or the suitcase's contents before or after he entered the workshop. His focus was on his intended task, and he was not aware of any other events that might have occurred.\n\n**Answer: Very Likely (Around 90%)**",
+          "truncated": false
+        }
+      ],
+      "last_recorded_survivors": 4,
+      "completed_steps_before_failure": 2
+    },
+    {
+      "row_id": 2299,
+      "error": "Unparseable six-option evaluation",
+      "last_stage": "adaptive.state_only_plausibility",
+      "unparseable_responses": [
+        {
+          "ordinal": 18,
+          "raw_output": "William's updated hypothesis is based on direct observations and actions he has experienced or perceived. He believes the cucumber is causing him pain, he is performing the action of shoving the eggplant into the bottle, and he now believes Avery has entered the den. These beliefs are justified given the information available to him.\n\n**Answer: Likely (Around 70%)**",
+          "truncated": false
+        }
+      ],
+      "last_recorded_survivors": 2,
+      "completed_steps_before_failure": 2
+    },
+    {
+      "row_id": 5133,
+      "error": "Unparseable six-option evaluation",
+      "last_stage": "adaptive.state_only_plausibility",
+      "unparseable_responses": [
+        {
+          "ordinal": 15,
+          "raw_output": "Answer: Somewhat Likely (Around 60%)\n\nIsabella's updated hypothesis is plausible from her perspective because she successfully brought the cucumber to the pantry and was not aware of any subsequent events in the cellar. Given that she left the cellar before the events involving Liam and the carrot, her belief that the cucumber is in the pantry remains justified. However, since she did not witness the events in the cellar, there is a small chance that the cucumber's location could have changed, making it less than very likely.",
+          "truncated": false
+        }
+      ],
+      "last_recorded_survivors": 3,
+      "completed_steps_before_failure": 1
+    },
+    {
+      "row_id": 5416,
+      "error": "Unparseable six-option evaluation",
+      "last_stage": "adaptive.state_only_plausibility",
+      "unparseable_responses": [
+        {
+          "ordinal": 11,
+          "raw_output": "Answer: Somewhat Likely (Around 60%)\n\nExplanation: The updated hypothesis is plausible from Jacob's perspective because it aligns with his initial belief and interest in pineapples. Jacob's actions and the context provided support the idea that he was focused on seeing the pineapples in the garage. The fact that Chloe's actions (shifting the t-shirt) did not involve pineapples and were not observed by Jacob do not contradict his belief. Therefore, the hypothesis remains justified from Jacob's viewpoint.",
+          "truncated": false
+        }
+      ],
+      "last_recorded_survivors": 1,
+      "completed_steps_before_failure": 1
+    },
+    {
+      "row_id": 5788,
+      "error": "Unparseable six-option evaluation",
+      "last_stage": "adaptive.state_only_plausibility",
+      "unparseable_responses": [
+        {
+          "ordinal": 22,
+          "raw_output": "Answer: Somewhat Likely (Around 60%)\n\nExplanation: The updated hypothesis aligns well with Sophia's current perception and actions. Sophia saw the turnip in the treasure chest and took it to the basket, and she also observed Mason running from the patio. These observations support her belief that she collected the turnip and that Mason was present and left the patio. The hypothesis does not conflict with her direct observations and maintains her focus on the turnip and the basket. While she is not aware of William's actions or the turnip being placed there by someone else, this does not make the hypothesis implausible from her perspective.",
+          "truncated": false
+        }
+      ],
+      "last_recorded_survivors": 3,
+      "completed_steps_before_failure": 2
+    }
+  ],
+  "protected_original_files_verified": 91,
+  "empty_initial_or_recorded_step_hypotheses": 0,
+  "limits": [
+    "Persisted logs cannot prove object immutability; existing CPU mock test covers that property",
+    "No semantic validation of target, action labels, perceptions or hypothesis correctness",
+    "Error examples may contain partial trajectories; reported last count is not a completed final count",
+    "Snapshot logs do not by themselves prove absence of all unlogged operations"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "empty_item_before_valid_item": {
+    "rejected": false,
+    "parsed": [
+      "",
+      "Valid hypothesis."
+    ],
+    "contains_empty": true
+  },
+  "empty_last_item": {
+    "rejected": true,
+    "error": "Expected only a numbered list, starting at 1, with nonempty items"
+  },
+  "empty_only_item": {
+    "rejected": true,
+    "error": "Expected only a numbered list, starting at 1, with nonempty items"
+  }
+}
