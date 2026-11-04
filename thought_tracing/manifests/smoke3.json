@@ -1,0 +1,98 @@
+{
+  "seed": 20261020,
+  "selection_algorithm": "stdlib random.Random(seed).shuffle; smoke strata first, then pilot strata; first eligible rows; unique normalized story and exact event-sequence template across all 23 rows",
+  "dataset": "paraphrased_tomi/test",
+  "source_files": {
+    "test.txt": "2c741e940736af097393245348cc1362102ec488450b63cf2c8190ac5a263c6c",
+    "test.trace": "ba6a7d93c035f975e06cf7a3ec1b9f37d3d3008ddaf3af42b86ffb05c09c3595"
+  },
+  "question_type_definition": "official revised_tomi/test_tomi.py:257-260; *_tom=false belief, *_no_tom=true belief, 0/1 are agent indices; final trace field describes scenario and is not substituted for qtype",
+  "limitations": "Only belief questions, excluding reality/memory. Lexically different stories and distinct exact event templates can share broader generator families; samples are not assumed independent.",
+  "split": "smoke3",
+  "count": 3,
+  "rows": [
+    {
+      "row_id": 1906,
+      "question_line_1based": 20848,
+      "question_index": 1,
+      "story": "Emily stepped into the lounge. Jayden walked into the lounge. There is a peas in the cupboard. The cupboard is laid in the lounge. Liam showed up at the lounge. Jayden took the peas to the treasure chest. The lounge is where the treasure chest is. Emily is besotted with the sweatshirt. Emily walked out of the lounge. Jayden stepped out of the lounge. Emily slithered into the garage.",
+      "question": "Where will Jayden look for the peas?",
+      "answer": "treasure chest",
+      "qtype": "first_order_1_no_tom",
+      "order": 1,
+      "belief": "true",
+      "stratum": "order1_true",
+      "story_sha256": "2b57b7b3f83744a25c40b2874de5ac259036bb3577f9abc339704c97778689a6",
+      "raw_story_sha256": "030d4651f270f4c685891c74bb2443419c10dd601b949b18d15cebdc3ffac937",
+      "trace_events": [
+        "enter_agent_1",
+        "enter_agent_0",
+        "agent_0_moves_obj",
+        "agent_2_enters",
+        "agent_1_exits",
+        "agent_0_exits",
+        "agent_1_reenters_alt_loc"
+      ],
+      "template_sha256": "308cd6b2ca0dd9147714941a465a0f306173a58f80b71b366d58aac2c499e2b6",
+      "scenario_type": "second_order_false_belief",
+      "candidate_answer_locations": [
+        "treasure chest",
+        "cupboard"
+      ]
+    },
+    {
+      "row_id": 3431,
+      "question_line_1based": 37454,
+      "question_index": 1,
+      "story": "Nathan bounded into the crawlspace. Liam arrived at the crawlspace. A sweater is in the box. The box is in the crawlspace. Aria arrived at the crawlspace. Nathan walked out of the crawlspace. Liam stowed the sweater in the suitcase. The suitcase is found in the crawlspace.",
+      "question": "Where will Nathan look for the sweater?",
+      "answer": "box",
+      "qtype": "first_order_0_tom",
+      "order": 1,
+      "belief": "false",
+      "stratum": "order1_false",
+      "story_sha256": "7e83702176ec84275bfd9b95188278cf494135a75f2e7d568f9a9a06f1f44938",
+      "raw_story_sha256": "324ece9da8d254e469bb8bbf977abb36015b4541be59ecebac02d1e8d5f729ab",
+      "trace_events": [
+        "enter_agent_1",
+        "enter_agent_0",
+        "agent_1_exits",
+        "agent_2_enters",
+        "agent_0_moves_obj"
+      ],
+      "template_sha256": "bce0a9ff7fce9809b00a422a273e94af203fcbbc90651b869a079803241d5ff6",
+      "scenario_type": "false_belief",
+      "candidate_answer_locations": [
+        "suitcase",
+        "box"
+      ]
+    },
+    {
+      "row_id": 2097,
+      "question_line_1based": 22923,
+      "question_index": 1,
+      "story": "Charlotte tiptoed into the dining room. Mila bounded into the dining room. The peach is found in the bottle. The bottle is set in the dining room. Mila exited the dining room. Mila walked into the closet. Charlotte pushed the peach to the basket. The basket is put to rest in the dining room.",
+      "question": "Where does Charlotte think that Mila searches for the peach?",
+      "answer": "bottle",
+      "qtype": "second_order_0_tom",
+      "order": 2,
+      "belief": "false",
+      "stratum": "order2_false",
+      "story_sha256": "13492315c1c308ae723999de75af04b3a8f0bb0cf3cdaf65c56730b551aca64f",
+      "raw_story_sha256": "2e619ca178f662a331558c49066e8d8e2c3afa0dec11e24c1c74d28f9e1f19ee",
+      "trace_events": [
+        "enter_agent_0",
+        "enter_agent_1",
+        "agent_1_exits",
+        "agent_1_reenters_alt_loc",
+        "agent_0_moves_obj"
+      ],
+      "template_sha256": "b005bbe5f716dce2a0bba649ff41106e3906086b788c3b60a1fc7911d08db7e8",
+      "scenario_type": "true_belief",
+      "candidate_answer_locations": [
+        "basket",
+        "bottle"
+      ]
+    }
+  ]
+}

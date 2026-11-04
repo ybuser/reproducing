@@ -1,0 +1,42 @@
+diff --git a/agents/load_model.py b/agents/load_model.py
+index a041460..32389ad 100644
+--- a/agents/load_model.py
++++ b/agents/load_model.py
+@@ -1,9 +1,12 @@
+-from .gpt import AsyncConversationalGPTBaseAgent, ConversationalGPTBaseAgent, O1BaseAgent, O1MiniAgent
+-from .gemini import AsyncGeminiAgent
+-from .together_ai import AsyncTogetherAIAgent, AsyncLlama3Agent, AsyncQwenAgent, AsyncDeepSeekAgent
+-from .vllm import VllmAgent
+-
+ def load_model(model_name, num_gpus=2, mode="async", **kwargs):
++    # A: no cloud SDK/client imports or API fallback on the local route.
++    if model_name == "Qwen/Qwen2.5-7B-Instruct":
++        from repro.local_model import shared_local_model
++        return shared_local_model(model_name, **kwargs)
++    from .gpt import AsyncConversationalGPTBaseAgent, ConversationalGPTBaseAgent, O1BaseAgent, O1MiniAgent
++    from .gemini import AsyncGeminiAgent
++    from .together_ai import AsyncTogetherAIAgent, AsyncLlama3Agent, AsyncQwenAgent, AsyncDeepSeekAgent
++    from .vllm import VllmAgent
+     if model_name in ["o1-preview-2024-09-12", "o1-2024-12-17", "o3-mini-2025-01-31"]:
+         model = O1BaseAgent({'model': model_name, **kwargs})
+     elif model_name in ["o1-mini-2024-09-12"]:
+diff --git a/tracer.py b/tracer.py
+index ceae0c9..d61f7c3 100644
+--- a/tracer.py
++++ b/tracer.py
+@@ -30,6 +30,8 @@ def get_tracer_parser():
+     parser.add_argument('--use-tracing', action='store_true', help='whether to run the model with thought tracing')
+     parser.add_argument('--tracing-model', type=str, help='Model to use to answer final question.')
+     parser.add_argument('--n-hypotheses', type=int, default=4, help='number of hypotheses to generate for each input', )
++    # A: standard rejuvenation reads this otherwise missing option.
++    parser.add_argument('--use-perception-only', action='store_true', default=False)
+     parser.add_argument('--target-perceptions', type=str, default='sight',help='target perceptions to test')  #'sight,hearing,overall', 
+     parser.add_argument('--use-helper-llm', action='store_true', help='whether to use user helper llm for identifying target agent and labeling actions',)
+     parser.add_argument('--existing-traces', default=None, help='path to existing traces')
+@@ -1138,4 +1140,4 @@ def load_tracer_model(args):
+     else:
+         raise NotImplementedError
+ 
+-    return tracing_model
+\ No newline at end of file
++    return tracing_model

@@ -1,0 +1,37 @@
+--- bf16_v1/repro/run.py
++++ bf16_v2/repro/run.py
+@@ -31,12 +31,23 @@
+ 
+ def write_json(path, value):
+     text = json.dumps(value, ensure_ascii=False, indent=2) + "\n"
+-    temporary = path.with_suffix(path.suffix + ".tmp")
++    temporary = path.with_name(path.name + f".tmp-{time.time_ns()}")
+     with temporary.open("w", encoding="utf-8") as stream:
+         stream.write(text)
+         stream.flush()
+         os.fsync(stream.fileno())
+-    temporary.replace(path)
++    # Windows scanners/readers may briefly deny FILE_SHARE_DELETE after close.
++    # Preserve the complete temp file and retry only sharing/lock violations;
++    # access-policy errors and persistent failures still propagate unchanged.
++    for attempt in range(10):
++        try:
++            temporary.replace(path)
++            break
++        except PermissionError as exc:
++            if getattr(exc, "winerror", None) not in (32, 33) or attempt == 9:
++                raise
++            print(f"LOCAL_IO_RETRY file={path.name} winerror={exc.winerror} attempt={attempt + 1}", flush=True)
++            time.sleep(min(0.1 * 2**attempt, 2.0))
+ 
+ 
+ def progress(**values):
+@@ -149,7 +160,7 @@
+ 
+ def main():
+     parser = argparse.ArgumentParser()
+-    parser.add_argument("--config", default="configs/bf16_v1.json")
++    parser.add_argument("--config", default="configs/bf16_v2.json")
+     parser.add_argument("--phase", choices=["connectivity", "smoke", "pilot", "all"], default="all")
+     parser.add_argument("--retry-failed", action="store_true")
+     parser.add_argument("--wait-for-pilot-release", action="store_true", help="Keep the shared model loaded while smoke logs are inspected; release with runs/<version>/pilot.release")

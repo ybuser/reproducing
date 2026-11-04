@@ -1,0 +1,423 @@
+{
+  "created_at": "2026-10-27T10:47:00.062794+09:00",
+  "scope": "Local fixed-4 run vs paper Qwen72B; not adaptive-A",
+  "source_summary": "C:\\code\\yb-thought-tracing\\reports\\bf16_official600_v1\\summary.json",
+  "source_summary_sha256": "ad4dc819ccc85ab302a4fe5229aa7d727d4e7bc85295be4e4b698de78eaad761",
+  "fixed_run_version": "bf16_official600_v1",
+  "reference_commit": "966eb2712714aa29b4d5d2395e39af94a2be90d7",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "fixed_manifest_sha256": "19b41683ef039b5a99e8684666d0dab1a49dd5d54ac2a737073a490c07d5594d",
+  "author_run_manifest_verified": false,
+  "paper_url": "https://arxiv.org/html/2502.11881v2",
+  "paper_pdf_provenance": {
+    "url": "https://arxiv.org/pdf/2502.11881v2",
+    "sha256": "8c6d92f4b42667d71198f48b4e923aa9854ae9e779ec40d9df3f21fa45041db3",
+    "provided_pdf_matches_v2": true
+  },
+  "paper_tables": {
+    "table2": {
+      "Base": {
+        "Avg": 57.3,
+        "False Belief": 39.0,
+        "True Belief": 75.5
+      },
+      "CoT": {
+        "Avg": 67.8,
+        "False Belief": 63.0,
+        "True Belief": 72.5
+      },
+      "TT": {
+        "Avg": 74.3,
+        "False Belief": 63.0,
+        "True Belief": 85.5
+      }
+    },
+    "table6_subtype_order": [
+      "order1_false100",
+      "order2_false100",
+      "order1_true100",
+      "order2_true100"
+    ],
+    "table6": {
+      "Base": [
+        22,
+        56,
+        85,
+        66
+      ],
+      "CoT": [
+        50,
+        76,
+        84,
+        61
+      ],
+      "TT": [
+        65,
+        61,
+        91,
+        80
+      ]
+    }
+  },
+  "scoring": "Official case-insensitive substring in final prediction; strict scores kept separately",
+  "metric_alignment": {
+    "local_main": "belief400",
+    "paper_avg_denominator_status": "Inferred from Table2/Table6 and official belief aggregation; paper section3 says all questions; not confirmed with authors",
+    "difference_calculation": "Published rounded Table2 Avg, not author raw counts"
+  },
+  "main": [
+    {
+      "method": "Base",
+      "paper_published_avg_percent": 57.3,
+      "local_correct": 219,
+      "local_n": 400,
+      "local_percent": 54.75,
+      "local_minus_published_paper_pp": -2.55
+    },
+    {
+      "method": "CoT",
+      "paper_published_avg_percent": 67.8,
+      "local_correct": 237,
+      "local_n": 400,
+      "local_percent": 59.25,
+      "local_minus_published_paper_pp": -8.55
+    },
+    {
+      "method": "TT",
+      "paper_published_avg_percent": 74.3,
+      "local_correct": 215,
+      "local_n": 400,
+      "local_percent": 53.75,
+      "local_minus_published_paper_pp": -20.55
+    }
+  ],
+  "belief_types": [
+    {
+      "method": "Base",
+      "local_type": "false_belief200",
+      "paper_percent": 39.0,
+      "local_correct": 69,
+      "local_n": 200,
+      "local_percent": 34.5,
+      "local_minus_paper_pp": -4.5
+    },
+    {
+      "method": "Base",
+      "local_type": "true_belief200",
+      "paper_percent": 75.5,
+      "local_correct": 150,
+      "local_n": 200,
+      "local_percent": 75.0,
+      "local_minus_paper_pp": -0.5
+    },
+    {
+      "method": "CoT",
+      "local_type": "false_belief200",
+      "paper_percent": 63.0,
+      "local_correct": 80,
+      "local_n": 200,
+      "local_percent": 40.0,
+      "local_minus_paper_pp": -23.0
+    },
+    {
+      "method": "CoT",
+      "local_type": "true_belief200",
+      "paper_percent": 72.5,
+      "local_correct": 157,
+      "local_n": 200,
+      "local_percent": 78.5,
+      "local_minus_paper_pp": 6.0
+    },
+    {
+      "method": "TT",
+      "local_type": "false_belief200",
+      "paper_percent": 63.0,
+      "local_correct": 49,
+      "local_n": 200,
+      "local_percent": 24.5,
+      "local_minus_paper_pp": -38.5
+    },
+    {
+      "method": "TT",
+      "local_type": "true_belief200",
+      "paper_percent": 85.5,
+      "local_correct": 166,
+      "local_n": 200,
+      "local_percent": 83.0,
+      "local_minus_paper_pp": -2.5
+    }
+  ],
+  "subtypes": [
+    {
+      "method": "Base",
+      "local_type": "order1_false100",
+      "paper_percent": 22,
+      "local_correct": 38,
+      "local_n": 100,
+      "local_percent": 38.0,
+      "local_minus_paper_pp": 16.0
+    },
+    {
+      "method": "Base",
+      "local_type": "order2_false100",
+      "paper_percent": 56,
+      "local_correct": 31,
+      "local_n": 100,
+      "local_percent": 31.0,
+      "local_minus_paper_pp": -25.0
+    },
+    {
+      "method": "Base",
+      "local_type": "order1_true100",
+      "paper_percent": 85,
+      "local_correct": 73,
+      "local_n": 100,
+      "local_percent": 73.0,
+      "local_minus_paper_pp": -12.0
+    },
+    {
+      "method": "Base",
+      "local_type": "order2_true100",
+      "paper_percent": 66,
+      "local_correct": 77,
+      "local_n": 100,
+      "local_percent": 77.0,
+      "local_minus_paper_pp": 11.0
+    },
+    {
+      "method": "CoT",
+      "local_type": "order1_false100",
+      "paper_percent": 50,
+      "local_correct": 35,
+      "local_n": 100,
+      "local_percent": 35.0,
+      "local_minus_paper_pp": -15.0
+    },
+    {
+      "method": "CoT",
+      "local_type": "order2_false100",
+      "paper_percent": 76,
+      "local_correct": 45,
+      "local_n": 100,
+      "local_percent": 45.0,
+      "local_minus_paper_pp": -31.0
+    },
+    {
+      "method": "CoT",
+      "local_type": "order1_true100",
+      "paper_percent": 84,
+      "local_correct": 87,
+      "local_n": 100,
+      "local_percent": 87.0,
+      "local_minus_paper_pp": 3.0
+    },
+    {
+      "method": "CoT",
+      "local_type": "order2_true100",
+      "paper_percent": 61,
+      "local_correct": 70,
+      "local_n": 100,
+      "local_percent": 70.0,
+      "local_minus_paper_pp": 9.0
+    },
+    {
+      "method": "TT",
+      "local_type": "order1_false100",
+      "paper_percent": 65,
+      "local_correct": 35,
+      "local_n": 100,
+      "local_percent": 35.0,
+      "local_minus_paper_pp": -30.0
+    },
+    {
+      "method": "TT",
+      "local_type": "order2_false100",
+      "paper_percent": 61,
+      "local_correct": 14,
+      "local_n": 100,
+      "local_percent": 14.0,
+      "local_minus_paper_pp": -47.0
+    },
+    {
+      "method": "TT",
+      "local_type": "order1_true100",
+      "paper_percent": 91,
+      "local_correct": 86,
+      "local_n": 100,
+      "local_percent": 86.0,
+      "local_minus_paper_pp": -5.0
+    },
+    {
+      "method": "TT",
+      "local_type": "order2_true100",
+      "paper_percent": 80,
+      "local_correct": 80,
+      "local_n": 100,
+      "local_percent": 80.0,
+      "local_minus_paper_pp": 0.0
+    }
+  ],
+  "within_experiment_method_deltas": {
+    "CoT_minus_Base": {
+      "paper_published_avg_pp": 10.5,
+      "local_belief400_official_pp": 4.5
+    },
+    "TT_minus_Base": {
+      "paper_published_avg_pp": 17.0,
+      "local_belief400_official_pp": -1.0
+    },
+    "TT_minus_CoT": {
+      "paper_published_avg_pp": 6.5,
+      "local_belief400_official_pp": -5.5
+    }
+  },
+  "local_supplementary": {
+    "Base": {
+      "all600": {
+        "planned": 600,
+        "completed": 600,
+        "missing": 0,
+        "official_correct": 378,
+        "strict_correct": 344,
+        "official_percent": 63.0,
+        "strict_percent": 57.333333333333336
+      },
+      "belief400": {
+        "planned": 400,
+        "completed": 400,
+        "missing": 0,
+        "official_correct": 219,
+        "strict_correct": 196,
+        "official_percent": 54.75,
+        "strict_percent": 49.0
+      },
+      "false_belief200": {
+        "planned": 200,
+        "completed": 200,
+        "missing": 0,
+        "official_correct": 69,
+        "strict_correct": 60,
+        "official_percent": 34.5,
+        "strict_percent": 30.0
+      },
+      "true_belief200": {
+        "planned": 200,
+        "completed": 200,
+        "missing": 0,
+        "official_correct": 150,
+        "strict_correct": 136,
+        "official_percent": 75.0,
+        "strict_percent": 68.0
+      }
+    },
+    "CoT": {
+      "all600": {
+        "planned": 600,
+        "completed": 600,
+        "missing": 0,
+        "official_correct": 434,
+        "strict_correct": 379,
+        "official_percent": 72.33333333333333,
+        "strict_percent": 63.166666666666664
+      },
+      "belief400": {
+        "planned": 400,
+        "completed": 400,
+        "missing": 0,
+        "official_correct": 237,
+        "strict_correct": 208,
+        "official_percent": 59.25,
+        "strict_percent": 52.0
+      },
+      "false_belief200": {
+        "planned": 200,
+        "completed": 200,
+        "missing": 0,
+        "official_correct": 80,
+        "strict_correct": 69,
+        "official_percent": 40.0,
+        "strict_percent": 34.5
+      },
+      "true_belief200": {
+        "planned": 200,
+        "completed": 200,
+        "missing": 0,
+        "official_correct": 157,
+        "strict_correct": 139,
+        "official_percent": 78.5,
+        "strict_percent": 69.5
+      }
+    },
+    "TT": {
+      "all600": {
+        "planned": 600,
+        "completed": 600,
+        "missing": 0,
+        "official_correct": 374,
+        "strict_correct": 347,
+        "official_percent": 62.333333333333336,
+        "strict_percent": 57.833333333333336
+      },
+      "belief400": {
+        "planned": 400,
+        "completed": 400,
+        "missing": 0,
+        "official_correct": 215,
+        "strict_correct": 199,
+        "official_percent": 53.75,
+        "strict_percent": 49.75
+      },
+      "false_belief200": {
+        "planned": 200,
+        "completed": 200,
+        "missing": 0,
+        "official_correct": 49,
+        "strict_correct": 43,
+        "official_percent": 24.5,
+        "strict_percent": 21.5
+      },
+      "true_belief200": {
+        "planned": 200,
+        "completed": 200,
+        "missing": 0,
+        "official_correct": 166,
+        "strict_correct": 156,
+        "official_percent": 83.0,
+        "strict_percent": 78.0
+      }
+    }
+  },
+  "protocol_differences": [
+    "Qwen2.5-7B instead of Qwen2.5-72B",
+    "Same local 7B for all TT stages instead of GPT-4o action labeling",
+    "Shared final answer instruction as originally requested",
+    "Reconstructed official default sample; author executed-input manifest not obtained",
+    "Local Transformers adapter honors explicit call settings; original backend forwarding may differ"
+  ],
+  "causal_attribution": "Not identified; model scale, action labeling, prompts, backend and author sample identity differ or are unverified",
+  "existing_run_files_modified": false,
+  "additional_inference_calls": 0,
+  "paper_other_table2_baselines": {
+    "GPT-4o": {
+      "Base": 59.5,
+      "CoT": 67.0,
+      "TT": 76.0
+    },
+    "Llama 3.3 70B": {
+      "Base": 57.3,
+      "CoT": 64.5,
+      "TT": 71.3
+    },
+    "Gemini 1.5 Pro": {
+      "Base": 54.8,
+      "CoT": 58.3,
+      "TT": 74.3
+    },
+    "Qwen 2.5 72B": {
+      "Base": 57.3,
+      "CoT": 67.8,
+      "TT": 74.3
+    }
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "status": "DESIGN_ONLY_NOT_EXECUTED",
+  "count_pairs": 10,
+  "conditions_per_pair": 2,
+  "public_synthetic_english_cases": true,
+  "primary_metric": "sum(both observed and unobserved final answers correct) / 10; also report per-order paired success",
+  "secondary_diagnostics": "failure stage from actual intermediate outputs; perceived-access flip; correct final answer with wrong intermediate states",
+  "validity_review_required_before_execution": [
+    "Confirm gold and access semantics for every pair",
+    "Confirm no hearing, dialogue, reobservation, or later action reveals the move",
+    "Confirm physical event list and final location are identical",
+    "Freeze model/config/scoring and randomize/counterbalance variant order before execution"
+  ],
+  "correlation_warning": "These share simple generation templates; do not claim ten independent naturalistic scenarios.",
+  "pairs": [
+    {
+      "pair_id": "obs-01",
+      "order": 1,
+      "target_of_observation": "Ben",
+      "physical_events_identical": [
+        "Anna, Ben, and Clara are in the kitchen. They all look inside the box and see the marble.",
+        "Clara silently moves the marble from the box to the basket, both in the kitchen.",
+        "No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location."
+      ],
+      "actual_final_location_both": "basket in the kitchen",
+      "manipulation": "visual access to the single move; outer observer knows the access condition in second-order pairs",
+      "variants": {
+        "observed": {
+          "story": "Anna, Ben, and Clara are in the kitchen. They all look inside the box and see the marble. Clara silently moves the marble from the box to the basket, both in the kitchen. During this move, Ben sees the entire transfer and its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where will Ben look for the marble?",
+          "gold_container": "basket",
+          "gold_place": "kitchen",
+          "story_sha256": "42db695a1ea0ac17ce6b9cf0020693644559bd4999e9c21e0ed035036c89ff01"
+        },
+        "unobserved": {
+          "story": "Anna, Ben, and Clara are in the kitchen. They all look inside the box and see the marble. Clara silently moves the marble from the box to the basket, both in the kitchen. During this move, Ben does not see any part of the transfer or its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where will Ben look for the marble?",
+          "gold_container": "box",
+          "gold_place": "kitchen",
+          "story_sha256": "0a540f009c882b767565fcfea111a55a89119c9d69812720929ad2e5dab45055"
+        }
+      },
+      "gold_reason": "All characters initially see marble in box. With access Ben updates to basket; without access no later information changes the initial belief. ",
+      "design_checks": {
+        "same_physical_move_and_final_location": true,
+        "gold_flips": true,
+        "no_later_communication_or_reobservation_or_action_hint": true,
+        "human_review_completed": false
+      }
+    },
+    {
+      "pair_id": "obs-02",
+      "order": 1,
+      "target_of_observation": "Emma",
+      "physical_events_identical": [
+        "David, Emma, and Felix are in the study. They all look inside the drawer and see the key.",
+        "Felix silently moves the key from the drawer to the cupboard, both in the study.",
+        "No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location."
+      ],
+      "actual_final_location_both": "cupboard in the study",
+      "manipulation": "visual access to the single move; outer observer knows the access condition in second-order pairs",
+      "variants": {
+        "observed": {
+          "story": "David, Emma, and Felix are in the study. They all look inside the drawer and see the key. Felix silently moves the key from the drawer to the cupboard, both in the study. During this move, Emma sees the entire transfer and its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where will Emma look for the key?",
+          "gold_container": "cupboard",
+          "gold_place": "study",
+          "story_sha256": "620d23ae57f5ede7a9431e2273a030ecbd480a60d12b037eec09fae7cc5841a6"
+        },
+        "unobserved": {
+          "story": "David, Emma, and Felix are in the study. They all look inside the drawer and see the key. Felix silently moves the key from the drawer to the cupboard, both in the study. During this move, Emma does not see any part of the transfer or its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where will Emma look for the key?",
+          "gold_container": "drawer",
+          "gold_place": "study",
+          "story_sha256": "9b1d84c17a996cbe034037785a582f021bba286da7c7c9a76701164f86f05ced"
+        }
+      },
+      "gold_reason": "All characters initially see key in drawer. With access Emma updates to cupboard; without access no later information changes the initial belief. ",
+      "design_checks": {
+        "same_physical_move_and_final_location": true,
+        "gold_flips": true,
+        "no_later_communication_or_reobservation_or_action_hint": true,
+        "human_review_completed": false
+      }
+    },
+    {
+      "pair_id": "obs-03",
+      "order": 1,
+      "target_of_observation": "Henry",
+      "physical_events_identical": [
+        "Grace, Henry, and Iris are in the bedroom. They all look inside the envelope and see the coin.",
+        "Iris silently moves the coin from the envelope to the suitcase, both in the bedroom.",
+        "No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location."
+      ],
+      "actual_final_location_both": "suitcase in the bedroom",
+      "manipulation": "visual access to the single move; outer observer knows the access condition in second-order pairs",
+      "variants": {
+        "observed": {
+          "story": "Grace, Henry, and Iris are in the bedroom. They all look inside the envelope and see the coin. Iris silently moves the coin from the envelope to the suitcase, both in the bedroom. During this move, Henry sees the entire transfer and its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where will Henry look for the coin?",
+          "gold_container": "suitcase",
+          "gold_place": "bedroom",
+          "story_sha256": "ce43b9905bc3ccd0607710ff26035610b391efef0ff73a72489c1f697943bf80"
+        },
+        "unobserved": {
+          "story": "Grace, Henry, and Iris are in the bedroom. They all look inside the envelope and see the coin. Iris silently moves the coin from the envelope to the suitcase, both in the bedroom. During this move, Henry does not see any part of the transfer or its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where will Henry look for the coin?",
+          "gold_container": "envelope",
+          "gold_place": "bedroom",
+          "story_sha256": "fe1baff64de25a0d70da3ee75cd9a325ec0522504f833110e1ae05127d902afb"
+        }
+      },
+      "gold_reason": "All characters initially see coin in envelope. With access Henry updates to suitcase; without access no later information changes the initial belief. ",
+      "design_checks": {
+        "same_physical_move_and_final_location": true,
+        "gold_flips": true,
+        "no_later_communication_or_reobservation_or_action_hint": true,
+        "human_review_completed": false
+      }
+    },
+    {
+      "pair_id": "obs-04",
+      "order": 1,
+      "target_of_observation": "Kevin",
+      "physical_events_identical": [
+        "Julia, Kevin, and Lena are in the garage. They all look inside the crate and see the ribbon.",
+        "Lena silently moves the ribbon from the crate to the bucket, both in the garage.",
+        "No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location."
+      ],
+      "actual_final_location_both": "bucket in the garage",
+      "manipulation": "visual access to the single move; outer observer knows the access condition in second-order pairs",
+      "variants": {
+        "observed": {
+          "story": "Julia, Kevin, and Lena are in the garage. They all look inside the crate and see the ribbon. Lena silently moves the ribbon from the crate to the bucket, both in the garage. During this move, Kevin sees the entire transfer and its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where will Kevin look for the ribbon?",
+          "gold_container": "bucket",
+          "gold_place": "garage",
+          "story_sha256": "b083cf00e3db78bdbea5abb213bc2380c60e513317b773ef78b7d1f6e94927c1"
+        },
+        "unobserved": {
+          "story": "Julia, Kevin, and Lena are in the garage. They all look inside the crate and see the ribbon. Lena silently moves the ribbon from the crate to the bucket, both in the garage. During this move, Kevin does not see any part of the transfer or its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where will Kevin look for the ribbon?",
+          "gold_container": "crate",
+          "gold_place": "garage",
+          "story_sha256": "39d87e4a5e820ad31c2aacfd969aedd2c52865f50e098126ae2ba7babf3c2a00"
+        }
+      },
+      "gold_reason": "All characters initially see ribbon in crate. With access Kevin updates to bucket; without access no later information changes the initial belief. ",
+      "design_checks": {
+        "same_physical_move_and_final_location": true,
+        "gold_flips": true,
+        "no_later_communication_or_reobservation_or_action_hint": true,
+        "human_review_completed": false
+      }
+    },
+    {
+      "pair_id": "obs-05",
+      "order": 1,
+      "target_of_observation": "Noah",
+      "physical_events_identical": [
+        "Maya, Noah, and Olivia are in the office. They all look inside the basket and see the card.",
+        "Olivia silently moves the card from the basket to the box, both in the office.",
+        "No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location."
+      ],
+      "actual_final_location_both": "box in the office",
+      "manipulation": "visual access to the single move; outer observer knows the access condition in second-order pairs",
+      "variants": {
+        "observed": {
+          "story": "Maya, Noah, and Olivia are in the office. They all look inside the basket and see the card. Olivia silently moves the card from the basket to the box, both in the office. During this move, Noah sees the entire transfer and its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where will Noah look for the card?",
+          "gold_container": "box",
+          "gold_place": "office",
+          "story_sha256": "fa940796006a2088afb2b4a59d0db294d8142dc4a3e8cb0d5ebd2f6900e906e8"
+        },
+        "unobserved": {
+          "story": "Maya, Noah, and Olivia are in the office. They all look inside the basket and see the card. Olivia silently moves the card from the basket to the box, both in the office. During this move, Noah does not see any part of the transfer or its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where will Noah look for the card?",
+          "gold_container": "basket",
+          "gold_place": "office",
+          "story_sha256": "a57055ae931ee672032e38a8b819d4b6a7a2e7cdcb6d87ab7dcf1ee49deb6905"
+        }
+      },
+      "gold_reason": "All characters initially see card in basket. With access Noah updates to box; without access no later information changes the initial belief. ",
+      "design_checks": {
+        "same_physical_move_and_final_location": true,
+        "gold_flips": true,
+        "no_later_communication_or_reobservation_or_action_hint": true,
+        "human_review_completed": false
+      }
+    },
+    {
+      "pair_id": "obs-06",
+      "order": 2,
+      "target_of_observation": "Quinn",
+      "physical_events_identical": [
+        "Peter, Quinn, and Rosa are in the hallway. They all look inside the drawer and see the button.",
+        "Rosa silently moves the button from the drawer to the envelope, both in the hallway.",
+        "No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location."
+      ],
+      "actual_final_location_both": "envelope in the hallway",
+      "manipulation": "visual access to the single move; outer observer knows the access condition in second-order pairs",
+      "variants": {
+        "observed": {
+          "story": "Peter, Quinn, and Rosa are in the hallway. They all look inside the drawer and see the button. Rosa silently moves the button from the drawer to the envelope, both in the hallway. During this move, Quinn sees the entire transfer and its destination. Peter sees the entire move and knows that Quinn sees the entire transfer and its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where does Peter think Quinn will look for the button?",
+          "gold_container": "envelope",
+          "gold_place": "hallway",
+          "story_sha256": "6634c72647af8bb98a175b1d032210ea111c5d6f68c437b4b4b1231ee9e80a5b"
+        },
+        "unobserved": {
+          "story": "Peter, Quinn, and Rosa are in the hallway. They all look inside the drawer and see the button. Rosa silently moves the button from the drawer to the envelope, both in the hallway. During this move, Quinn does not see any part of the transfer or its destination. Peter sees the entire move and knows that Quinn does not see any part of the transfer or its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where does Peter think Quinn will look for the button?",
+          "gold_container": "drawer",
+          "gold_place": "hallway",
+          "story_sha256": "beb47a4cc10a26b10e6e1294794f0d6c8894982d6dbdf75b90950495b361e5f2"
+        }
+      },
+      "gold_reason": "All characters initially see button in drawer. With access Quinn updates to envelope; without access no later information changes the initial belief. Peter knows that access condition and predicts Quinn's belief accordingly.",
+      "design_checks": {
+        "same_physical_move_and_final_location": true,
+        "gold_flips": true,
+        "no_later_communication_or_reobservation_or_action_hint": true,
+        "human_review_completed": false
+      }
+    },
+    {
+      "pair_id": "obs-07",
+      "order": 2,
+      "target_of_observation": "Thomas",
+      "physical_events_identical": [
+        "Sara, Thomas, and Uma are in the lounge. They all look inside the box and see the ring.",
+        "Uma silently moves the ring from the box to the cupboard, both in the lounge.",
+        "No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location."
+      ],
+      "actual_final_location_both": "cupboard in the lounge",
+      "manipulation": "visual access to the single move; outer observer knows the access condition in second-order pairs",
+      "variants": {
+        "observed": {
+          "story": "Sara, Thomas, and Uma are in the lounge. They all look inside the box and see the ring. Uma silently moves the ring from the box to the cupboard, both in the lounge. During this move, Thomas sees the entire transfer and its destination. Sara sees the entire move and knows that Thomas sees the entire transfer and its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where does Sara think Thomas will look for the ring?",
+          "gold_container": "cupboard",
+          "gold_place": "lounge",
+          "story_sha256": "8adf5e3164c47055df3dc41ea177d5b92d0287c8373d6a556fd289979bcebbe6"
+        },
+        "unobserved": {
+          "story": "Sara, Thomas, and Uma are in the lounge. They all look inside the box and see the ring. Uma silently moves the ring from the box to the cupboard, both in the lounge. During this move, Thomas does not see any part of the transfer or its destination. Sara sees the entire move and knows that Thomas does not see any part of the transfer or its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where does Sara think Thomas will look for the ring?",
+          "gold_container": "box",
+          "gold_place": "lounge",
+          "story_sha256": "33afdd8f53fc65f1a564faebbfe0cb7ffd30125787bf160cee7c35f436856fcb"
+        }
+      },
+      "gold_reason": "All characters initially see ring in box. With access Thomas updates to cupboard; without access no later information changes the initial belief. Sara knows that access condition and predicts Thomas's belief accordingly.",
+      "design_checks": {
+        "same_physical_move_and_final_location": true,
+        "gold_flips": true,
+        "no_later_communication_or_reobservation_or_action_hint": true,
+        "human_review_completed": false
+      }
+    },
+    {
+      "pair_id": "obs-08",
+      "order": 2,
+      "target_of_observation": "Wendy",
+      "physical_events_identical": [
+        "Victor, Wendy, and Xavier are in the attic. They all look inside the suitcase and see the ticket.",
+        "Xavier silently moves the ticket from the suitcase to the crate, both in the attic.",
+        "No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location."
+      ],
+      "actual_final_location_both": "crate in the attic",
+      "manipulation": "visual access to the single move; outer observer knows the access condition in second-order pairs",
+      "variants": {
+        "observed": {
+          "story": "Victor, Wendy, and Xavier are in the attic. They all look inside the suitcase and see the ticket. Xavier silently moves the ticket from the suitcase to the crate, both in the attic. During this move, Wendy sees the entire transfer and its destination. Victor sees the entire move and knows that Wendy sees the entire transfer and its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where does Victor think Wendy will look for the ticket?",
+          "gold_container": "crate",
+          "gold_place": "attic",
+          "story_sha256": "df73c30aafaf19380bcd9976f4988174d21c23eb7ad6bb5c4217a42e28d24af6"
+        },
+        "unobserved": {
+          "story": "Victor, Wendy, and Xavier are in the attic. They all look inside the suitcase and see the ticket. Xavier silently moves the ticket from the suitcase to the crate, both in the attic. During this move, Wendy does not see any part of the transfer or its destination. Victor sees the entire move and knows that Wendy does not see any part of the transfer or its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where does Victor think Wendy will look for the ticket?",
+          "gold_container": "suitcase",
+          "gold_place": "attic",
+          "story_sha256": "960935a673851537d5b2777ebed91498a4171253ccdb17f191f729e0b4b954ad"
+        }
+      },
+      "gold_reason": "All characters initially see ticket in suitcase. With access Wendy updates to crate; without access no later information changes the initial belief. Victor knows that access condition and predicts Wendy's belief accordingly.",
+      "design_checks": {
+        "same_physical_move_and_final_location": true,
+        "gold_flips": true,
+        "no_later_communication_or_reobservation_or_action_hint": true,
+        "human_review_completed": false
+      }
+    },
+    {
+      "pair_id": "obs-09",
+      "order": 2,
+      "target_of_observation": "Zach",
+      "physical_events_identical": [
+        "Yara, Zach, and Alice are in the classroom. They all look inside the bucket and see the eraser.",
+        "Alice silently moves the eraser from the bucket to the basket, both in the classroom.",
+        "No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location."
+      ],
+      "actual_final_location_both": "basket in the classroom",
+      "manipulation": "visual access to the single move; outer observer knows the access condition in second-order pairs",
+      "variants": {
+        "observed": {
+          "story": "Yara, Zach, and Alice are in the classroom. They all look inside the bucket and see the eraser. Alice silently moves the eraser from the bucket to the basket, both in the classroom. During this move, Zach sees the entire transfer and its destination. Yara sees the entire move and knows that Zach sees the entire transfer and its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where does Yara think Zach will look for the eraser?",
+          "gold_container": "basket",
+          "gold_place": "classroom",
+          "story_sha256": "af07236889a4bc84b4f4167bfd29d7968bc3a416fcbfa97903a1a93a3774450a"
+        },
+        "unobserved": {
+          "story": "Yara, Zach, and Alice are in the classroom. They all look inside the bucket and see the eraser. Alice silently moves the eraser from the bucket to the basket, both in the classroom. During this move, Zach does not see any part of the transfer or its destination. Yara sees the entire move and knows that Zach does not see any part of the transfer or its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where does Yara think Zach will look for the eraser?",
+          "gold_container": "bucket",
+          "gold_place": "classroom",
+          "story_sha256": "0419da395180761c8b0ec261873cf08348f1883da52d81c8aff9e242fa0a8a44"
+        }
+      },
+      "gold_reason": "All characters initially see eraser in bucket. With access Zach updates to basket; without access no later information changes the initial belief. Yara knows that access condition and predicts Zach's belief accordingly.",
+      "design_checks": {
+        "same_physical_move_and_final_location": true,
+        "gold_flips": true,
+        "no_later_communication_or_reobservation_or_action_hint": true,
+        "human_review_completed": false
+      }
+    },
+    {
+      "pair_id": "obs-10",
+      "order": 2,
+      "target_of_observation": "Chloe",
+      "physical_events_identical": [
+        "Brian, Chloe, and Dylan are in the workshop. They all look inside the envelope and see the badge.",
+        "Dylan silently moves the badge from the envelope to the drawer, both in the workshop.",
+        "No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location."
+      ],
+      "actual_final_location_both": "drawer in the workshop",
+      "manipulation": "visual access to the single move; outer observer knows the access condition in second-order pairs",
+      "variants": {
+        "observed": {
+          "story": "Brian, Chloe, and Dylan are in the workshop. They all look inside the envelope and see the badge. Dylan silently moves the badge from the envelope to the drawer, both in the workshop. During this move, Chloe sees the entire transfer and its destination. Brian sees the entire move and knows that Chloe sees the entire transfer and its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where does Brian think Chloe will look for the badge?",
+          "gold_container": "drawer",
+          "gold_place": "workshop",
+          "story_sha256": "4c013df76d6155197fac0812a97633846a6530ba44762299f71baa1eed991680"
+        },
+        "unobserved": {
+          "story": "Brian, Chloe, and Dylan are in the workshop. They all look inside the envelope and see the badge. Dylan silently moves the badge from the envelope to the drawer, both in the workshop. During this move, Chloe does not see any part of the transfer or its destination. Brian sees the entire move and knows that Chloe does not see any part of the transfer or its destination. No one speaks or sends messages. Both containers are closed after the move. No one opens, touches, or checks either container again before the question. No other event gives anyone information about the item's location.",
+          "question": "Where does Brian think Chloe will look for the badge?",
+          "gold_container": "envelope",
+          "gold_place": "workshop",
+          "story_sha256": "3db9a18e27f242e12e1c5b32a4c4f882261ff8c45a6c2e5f88b2d69c29be410f"
+        }
+      },
+      "gold_reason": "All characters initially see badge in envelope. With access Chloe updates to drawer; without access no later information changes the initial belief. Brian knows that access condition and predicts Chloe's belief accordingly.",
+      "design_checks": {
+        "same_physical_move_and_final_location": true,
+        "gold_flips": true,
+        "no_later_communication_or_reobservation_or_action_hint": true,
+        "human_review_completed": false
+      }
+    }
+  ]
+}

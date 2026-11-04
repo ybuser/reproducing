@@ -1,0 +1,12 @@
+# Tested local-only inference dependencies; full resolved lock is recorded separately.
+transformers==4.57.1
+numpy==2.2.6
+pandas==2.3.3
+rich==14.2.0
+colorful==0.5.7
+nltk==3.9.2
+backoff==2.2.1
+requests==2.32.5
+# Read-only paper extraction/rendering.
+pypdf==6.1.1
+PyMuPDF==1.26.5

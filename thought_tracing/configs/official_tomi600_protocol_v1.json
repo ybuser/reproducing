@@ -1,0 +1,32 @@
+{
+  "protocol_id": "official_tomi600_local7b_v1",
+  "reference_commit": "966eb2712714aa29b4d5d2395e39af94a2be90d7",
+  "manifest_path": "manifests/tomi_official_defaults600_v1.json",
+  "manifest_sha256": "19b41683ef039b5a99e8684666d0dab1a49dd5d54ac2a737073a490c07d5594d",
+  "author_run_manifest_verified": false,
+  "conditions": ["Base", "CoT", "TT"],
+  "split": "official600",
+  "planned_items_per_condition": 600,
+  "planned_case_conditions": 1800,
+  "tt_enabled_qtypes": "all except reality and memory",
+  "tt_trace_items": 400,
+  "tt_bypassed_items": 200,
+  "final_prompt_policy": "Common original ANSWER_PROMPT for all three conditions, as requested in the initial reproduction; the official CoT/TT final prompt may include Therefore. This difference is retained and disclosed.",
+  "final_temperature": 0,
+  "final_max_tokens": 256,
+  "scoring_frozen_before_execution": true,
+  "official_scoring": "gold.lower() in final_prediction.lower(); execution failures count as incorrect; missing items are reported as incomplete",
+  "secondary_scoring": "Reuse unchanged repro/scoring.py predeclared final-only rules; null means human review, not automatic correct",
+  "metrics": ["all600", "belief400", "false_belief200", "true_belief200", "order1_true100", "order1_false100", "order2_true100", "order2_false100", "reality100", "memory100"],
+  "paper_table2_avg_interpretation": "Likely belief400: reported Avg equals mean(False Belief, True Belief), and official code exports belief. Section 3 also says all questions; report both all600 and belief400, and keep the interpretation explicitly unconfirmed.",
+  "paper_qwen72b_table2_percent": {
+    "Base": {"Avg": 57.3, "False Belief": 39.0, "True Belief": 75.5},
+    "CoT": {"Avg": 67.8, "False Belief": 63.0, "True Belief": 72.5},
+    "TT": {"Avg": 74.3, "False Belief": 63.0, "True Belief": 85.5}
+  },
+  "paper_source": "https://arxiv.org/html/2502.11881v2#S3",
+  "scope_authorization": "2026-10-26 user selected: current Qwen 7B, all 600 items, Base/CoT/TT; model differs from paper",
+  "differences_from_paper": ["Qwen2.5-7B instead of Qwen2.5-72B", "Same local 7B for all TT stages instead of GPT-4o action labeling", "Shared final answer instruction as originally requested", "Reconstructed official default sample; author executed-input manifest not obtained", "Local Transformers adapter honors explicit call settings; original backend forwarding may differ"],
+  "algorithm_changes": [],
+  "output_dependent_tuning": false
+}

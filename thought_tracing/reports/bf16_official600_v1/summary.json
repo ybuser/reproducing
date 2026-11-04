@@ -1,0 +1,3333 @@
+{
+  "run_version": "bf16_official600_v1",
+  "status": "complete",
+  "completed_case_conditions": 1800,
+  "planned_case_conditions": 1800,
+  "manifest_sha256": "19b41683ef039b5a99e8684666d0dab1a49dd5d54ac2a737073a490c07d5594d",
+  "author_run_manifest_verified": false,
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "protocol": {
+    "protocol_id": "official_tomi600_local7b_v1",
+    "reference_commit": "966eb2712714aa29b4d5d2395e39af94a2be90d7",
+    "manifest_path": "manifests/tomi_official_defaults600_v1.json",
+    "manifest_sha256": "19b41683ef039b5a99e8684666d0dab1a49dd5d54ac2a737073a490c07d5594d",
+    "author_run_manifest_verified": false,
+    "conditions": [
+      "Base",
+      "CoT",
+      "TT"
+    ],
+    "split": "official600",
+    "planned_items_per_condition": 600,
+    "planned_case_conditions": 1800,
+    "tt_enabled_qtypes": "all except reality and memory",
+    "tt_trace_items": 400,
+    "tt_bypassed_items": 200,
+    "final_prompt_policy": "Common original ANSWER_PROMPT for all three conditions, as requested in the initial reproduction; the official CoT/TT final prompt may include Therefore. This difference is retained and disclosed.",
+    "final_temperature": 0,
+    "final_max_tokens": 256,
+    "scoring_frozen_before_execution": true,
+    "official_scoring": "gold.lower() in final_prediction.lower(); execution failures count as incorrect; missing items are reported as incomplete",
+    "secondary_scoring": "Reuse unchanged repro/scoring.py predeclared final-only rules; null means human review, not automatic correct",
+    "metrics": [
+      "all600",
+      "belief400",
+      "false_belief200",
+      "true_belief200",
+      "order1_true100",
+      "order1_false100",
+      "order2_true100",
+      "order2_false100",
+      "reality100",
+      "memory100"
+    ],
+    "paper_table2_avg_interpretation": "Likely belief400: reported Avg equals mean(False Belief, True Belief), and official code exports belief. Section 3 also says all questions; report both all600 and belief400, and keep the interpretation explicitly unconfirmed.",
+    "paper_qwen72b_table2_percent": {
+      "Base": {
+        "Avg": 57.3,
+        "False Belief": 39.0,
+        "True Belief": 75.5
+      },
+      "CoT": {
+        "Avg": 67.8,
+        "False Belief": 63.0,
+        "True Belief": 72.5
+      },
+      "TT": {
+        "Avg": 74.3,
+        "False Belief": 63.0,
+        "True Belief": 85.5
+      }
+    },
+    "paper_source": "https://arxiv.org/html/2502.11881v2#S3",
+    "scope_authorization": "2026-10-26 user selected: current Qwen 7B, all 600 items, Base/CoT/TT; model differs from paper",
+    "differences_from_paper": [
+      "Qwen2.5-7B instead of Qwen2.5-72B",
+      "Same local 7B for all TT stages instead of GPT-4o action labeling",
+      "Shared final answer instruction as originally requested",
+      "Reconstructed official default sample; author executed-input manifest not obtained",
+      "Local Transformers adapter honors explicit call settings; original backend forwarding may differ"
+    ],
+    "algorithm_changes": [],
+    "output_dependent_tuning": false
+  },
+  "by_condition": {
+    "Base": {
+      "metrics": {
+        "all600": {
+          "planned": 600,
+          "completed": 600,
+          "missing": 0,
+          "official_correct": 378,
+          "strict_correct": 344,
+          "official_percent": 63.0,
+          "strict_percent": 57.333333333333336
+        },
+        "belief400": {
+          "planned": 400,
+          "completed": 400,
+          "missing": 0,
+          "official_correct": 219,
+          "strict_correct": 196,
+          "official_percent": 54.75,
+          "strict_percent": 49.0
+        },
+        "false_belief200": {
+          "planned": 200,
+          "completed": 200,
+          "missing": 0,
+          "official_correct": 69,
+          "strict_correct": 60,
+          "official_percent": 34.5,
+          "strict_percent": 30.0
+        },
+        "true_belief200": {
+          "planned": 200,
+          "completed": 200,
+          "missing": 0,
+          "official_correct": 150,
+          "strict_correct": 136,
+          "official_percent": 75.0,
+          "strict_percent": 68.0
+        },
+        "order1_true100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 73,
+          "strict_correct": 63,
+          "official_percent": 73.0,
+          "strict_percent": 63.0
+        },
+        "order1_false100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 38,
+          "strict_correct": 32,
+          "official_percent": 38.0,
+          "strict_percent": 32.0
+        },
+        "order2_true100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 77,
+          "strict_correct": 73,
+          "official_percent": 77.0,
+          "strict_percent": 73.0
+        },
+        "order2_false100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 31,
+          "strict_correct": 28,
+          "official_percent": 31.0,
+          "strict_percent": 28.0
+        },
+        "reality100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 62,
+          "strict_correct": 55,
+          "official_percent": 62.0,
+          "strict_percent": 55.0
+        },
+        "memory100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 97,
+          "strict_correct": 93,
+          "official_percent": 97.0,
+          "strict_percent": 93.0
+        }
+      },
+      "execution_failures": 0,
+      "format_failures": 0,
+      "final_review_count": 50,
+      "compute": {
+        "calls": 600,
+        "successful_calls": 600,
+        "failed_calls": 0,
+        "input_tokens": 88629,
+        "output_tokens": 4629,
+        "total_tokens": 93258,
+        "call_wall_seconds": 319.6610000000055,
+        "truncated_calls": 0,
+        "peak_allocated_bytes": 15348888064,
+        "peak_reserved_bytes": 18916311040
+      },
+      "tt_bypassed": 0
+    },
+    "CoT": {
+      "metrics": {
+        "all600": {
+          "planned": 600,
+          "completed": 600,
+          "missing": 0,
+          "official_correct": 434,
+          "strict_correct": 379,
+          "official_percent": 72.33333333333333,
+          "strict_percent": 63.166666666666664
+        },
+        "belief400": {
+          "planned": 400,
+          "completed": 400,
+          "missing": 0,
+          "official_correct": 237,
+          "strict_correct": 208,
+          "official_percent": 59.25,
+          "strict_percent": 52.0
+        },
+        "false_belief200": {
+          "planned": 200,
+          "completed": 200,
+          "missing": 0,
+          "official_correct": 80,
+          "strict_correct": 69,
+          "official_percent": 40.0,
+          "strict_percent": 34.5
+        },
+        "true_belief200": {
+          "planned": 200,
+          "completed": 200,
+          "missing": 0,
+          "official_correct": 157,
+          "strict_correct": 139,
+          "official_percent": 78.5,
+          "strict_percent": 69.5
+        },
+        "order1_true100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 87,
+          "strict_correct": 76,
+          "official_percent": 87.0,
+          "strict_percent": 76.0
+        },
+        "order1_false100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 35,
+          "strict_correct": 29,
+          "official_percent": 35.0,
+          "strict_percent": 29.0
+        },
+        "order2_true100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 70,
+          "strict_correct": 63,
+          "official_percent": 70.0,
+          "strict_percent": 63.0
+        },
+        "order2_false100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 45,
+          "strict_correct": 40,
+          "official_percent": 45.0,
+          "strict_percent": 40.0
+        },
+        "reality100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 98,
+          "strict_correct": 84,
+          "official_percent": 98.0,
+          "strict_percent": 84.0
+        },
+        "memory100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 99,
+          "strict_correct": 87,
+          "official_percent": 99.0,
+          "strict_percent": 87.0
+        }
+      },
+      "execution_failures": 0,
+      "format_failures": 0,
+      "final_review_count": 73,
+      "compute": {
+        "calls": 1200,
+        "successful_calls": 1200,
+        "failed_calls": 0,
+        "input_tokens": 326529,
+        "output_tokens": 168235,
+        "total_tokens": 494764,
+        "call_wall_seconds": 10284.968999999968,
+        "truncated_calls": 1,
+        "peak_allocated_bytes": 15526659072,
+        "peak_reserved_bytes": 18916311040
+      },
+      "tt_bypassed": 0
+    },
+    "TT": {
+      "metrics": {
+        "all600": {
+          "planned": 600,
+          "completed": 600,
+          "missing": 0,
+          "official_correct": 374,
+          "strict_correct": 347,
+          "official_percent": 62.333333333333336,
+          "strict_percent": 57.833333333333336
+        },
+        "belief400": {
+          "planned": 400,
+          "completed": 400,
+          "missing": 0,
+          "official_correct": 215,
+          "strict_correct": 199,
+          "official_percent": 53.75,
+          "strict_percent": 49.75
+        },
+        "false_belief200": {
+          "planned": 200,
+          "completed": 200,
+          "missing": 0,
+          "official_correct": 49,
+          "strict_correct": 43,
+          "official_percent": 24.5,
+          "strict_percent": 21.5
+        },
+        "true_belief200": {
+          "planned": 200,
+          "completed": 200,
+          "missing": 0,
+          "official_correct": 166,
+          "strict_correct": 156,
+          "official_percent": 83.0,
+          "strict_percent": 78.0
+        },
+        "order1_true100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 86,
+          "strict_correct": 80,
+          "official_percent": 86.0,
+          "strict_percent": 80.0
+        },
+        "order1_false100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 35,
+          "strict_correct": 32,
+          "official_percent": 35.0,
+          "strict_percent": 32.0
+        },
+        "order2_true100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 80,
+          "strict_correct": 76,
+          "official_percent": 80.0,
+          "strict_percent": 76.0
+        },
+        "order2_false100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 14,
+          "strict_correct": 11,
+          "official_percent": 14.0,
+          "strict_percent": 11.0
+        },
+        "reality100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 62,
+          "strict_correct": 55,
+          "official_percent": 62.0,
+          "strict_percent": 55.0
+        },
+        "memory100": {
+          "planned": 100,
+          "completed": 100,
+          "missing": 0,
+          "official_correct": 97,
+          "strict_correct": 93,
+          "official_percent": 97.0,
+          "strict_percent": 93.0
+        }
+      },
+      "execution_failures": 0,
+      "format_failures": 0,
+      "final_review_count": 49,
+      "compute": {
+        "calls": 8813,
+        "successful_calls": 8813,
+        "failed_calls": 0,
+        "input_tokens": 3113752,
+        "output_tokens": 777841,
+        "total_tokens": 3891593,
+        "call_wall_seconds": 45529.26599999989,
+        "truncated_calls": 0,
+        "peak_allocated_bytes": 16358994432,
+        "peak_reserved_bytes": 18916311040
+      },
+      "tt_bypassed": 200
+    }
+  },
+  "total_compute_from_result_journals": {
+    "calls": 10613,
+    "successful_calls": 10613,
+    "failed_calls": 0,
+    "input_tokens": 3528910,
+    "output_tokens": 950705,
+    "total_tokens": 4479615,
+    "call_wall_seconds": 56133.89599999986,
+    "truncated_calls": 1
+  },
+  "all_actual_journal_compute": {
+    "calls": 10614,
+    "successful_calls": 10614,
+    "failed_calls": 0,
+    "input_tokens": 3528946,
+    "output_tokens": 950707,
+    "total_tokens": 4479653,
+    "call_wall_seconds": 56135.11499999992,
+    "generation_seconds": 55729.8050000001,
+    "truncated_calls": 1,
+    "peak_allocated_bytes": 16358994432,
+    "peak_reserved_bytes": 18916311040,
+    "includes_connectivity_and_unfinalized_case_journals": true,
+    "first_call_start_unix": 1792974691.9848282,
+    "last_call_end_unix": 1793032554.8222647,
+    "call_span_wall_seconds": 57862.83743643761,
+    "journal_parse_errors": [],
+    "trace_events_all_attempts": {
+      "weigh": 573,
+      "resample": 17,
+      "rejuvenate": 2
+    },
+    "min_ess": 1.450660721442139,
+    "max_ess": 4.0,
+    "failed_call_generated_token_count": "unknown if generation failed before a successful call_end; raw errors retained"
+  },
+  "tt_improved_vs_base_row_ids": [
+    2760,
+    976,
+    4786,
+    5167,
+    5666,
+    5823,
+    793,
+    3214,
+    4298,
+    5416,
+    599,
+    2496,
+    5483,
+    1509,
+    2808,
+    5018,
+    5849,
+    1895,
+    2503,
+    5228,
+    724,
+    1161,
+    1446,
+    61,
+    4997,
+    426,
+    517,
+    4168,
+    2576,
+    3613,
+    4744,
+    2794,
+    4894,
+    3752,
+    905,
+    95,
+    290,
+    3558,
+    4481,
+    2377,
+    3584,
+    4372,
+    319,
+    2826,
+    4114,
+    4012,
+    804,
+    1340,
+    3385,
+    4545,
+    2109,
+    5825,
+    4711,
+    207,
+    1017,
+    2015
+  ],
+  "tt_worsened_vs_base_row_ids": [
+    4101,
+    5247,
+    5064,
+    477,
+    2492,
+    3388,
+    925,
+    5427,
+    540,
+    5929,
+    5138,
+    2539,
+    3307,
+    4441,
+    5998,
+    2570,
+    2613,
+    4522,
+    45,
+    5979,
+    3821,
+    3145,
+    2401,
+    1126,
+    2271,
+    1715,
+    2754,
+    188,
+    3282,
+    2168,
+    1084,
+    2822,
+    3319,
+    3335,
+    5133,
+    5595,
+    2075,
+    3694,
+    1917,
+    15,
+    1055,
+    220,
+    5535,
+    3265,
+    4086,
+    3420,
+    4828,
+    1599,
+    2246,
+    1633,
+    1840,
+    5762,
+    3912,
+    824,
+    3510,
+    192,
+    3301,
+    1642,
+    3431,
+    1074
+  ],
+  "scoring_disagreements": [
+    {
+      "row_id": 2204,
+      "condition": "CoT",
+      "prediction": "The patio.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 1001,
+      "condition": "CoT",
+      "prediction": "Logan thinks that Olivia searches for the jacket inside the staircase, specifically in the envelope.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 5058,
+      "condition": "Base",
+      "prediction": "from the sunroom in the sunroom",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 5058,
+      "condition": "CoT",
+      "prediction": "in the bathtub, which is in the sunroom.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 799,
+      "condition": "Base",
+      "prediction": "from the drawer in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 799,
+      "condition": "CoT",
+      "prediction": "James will look for the coat in the drawer in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 799,
+      "condition": "TT",
+      "prediction": "James will look for the coat in the drawer in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 746,
+      "condition": "Base",
+      "prediction": "from the container in the bathtub in the lounge",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 746,
+      "condition": "CoT",
+      "prediction": "The spinach is in the bathtub, which is in the lounge.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 746,
+      "condition": "TT",
+      "prediction": "from the container in the bathtub in the lounge",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3911,
+      "condition": "Base",
+      "prediction": "from the box in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5831,
+      "condition": "TT",
+      "prediction": "Ethan thinks that Isabella searches for the broccoli in the pantry in the container.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5167,
+      "condition": "CoT",
+      "prediction": "Benjamin will look for the slacks inside the master bedroom, specifically in the envelope.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5167,
+      "condition": "TT",
+      "prediction": "Benjamin will look for the slacks in the envelope in the pantry of the master bedroom.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4230,
+      "condition": "CoT",
+      "prediction": "Alexander thinks that Amelia searched the basement, particularly the area where the envelope was.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5823,
+      "condition": "Base",
+      "prediction": "from the cellar",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 5823,
+      "condition": "CoT",
+      "prediction": "the cellar, in the bottle.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4380,
+      "condition": "Base",
+      "prediction": "from the cellar",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 4380,
+      "condition": "CoT",
+      "prediction": "The cellar.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 1827,
+      "condition": "CoT",
+      "prediction": "James will look for the melon in the front yard, inside the envelope.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5064,
+      "condition": "TT",
+      "prediction": "TV room in the TV room",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 1243,
+      "condition": "TT",
+      "prediction": "master bedroom in the dining room",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3585,
+      "condition": "CoT",
+      "prediction": "The staircase.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3569,
+      "condition": "CoT",
+      "prediction": "Emily thinks that Isla searches for the banana in the back yard.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3557,
+      "condition": "TT",
+      "prediction": "Owen thinks Alexander searches for the pants in the garden.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 4330,
+      "condition": "Base",
+      "prediction": "from the drawer in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4330,
+      "condition": "CoT",
+      "prediction": "in the drawer in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4330,
+      "condition": "TT",
+      "prediction": "drawer in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3388,
+      "condition": "Base",
+      "prediction": "from the box in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1980,
+      "condition": "CoT",
+      "prediction": "The belt is in the basket, which is inside the attic.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1121,
+      "condition": "CoT",
+      "prediction": "The peas are in the crate, which is inside the laundry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 132,
+      "condition": "Base",
+      "prediction": "From the crate in the cellar to the suitcase in the cellar",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 132,
+      "condition": "TT",
+      "prediction": "From the crate in the cellar to the suitcase in the cellar",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 599,
+      "condition": "Base",
+      "prediction": "from the envelope in the pantry",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 599,
+      "condition": "TT",
+      "prediction": "A cupboard in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 981,
+      "condition": "Base",
+      "prediction": "from the box in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 981,
+      "condition": "CoT",
+      "prediction": "Aiden will look for the sweatshirt in the box in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 981,
+      "condition": "TT",
+      "prediction": "in the box in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1509,
+      "condition": "Base",
+      "prediction": "from the workshop in the basement",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 2143,
+      "condition": "Base",
+      "prediction": "from the box in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2143,
+      "condition": "CoT",
+      "prediction": "the persimmon is in the box in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2143,
+      "condition": "TT",
+      "prediction": "from the box in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4868,
+      "condition": "Base",
+      "prediction": "from the envelope in the pantry in the garden",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4868,
+      "condition": "CoT",
+      "prediction": "The tomato is in the envelope in the pantry, which is in the garden.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4868,
+      "condition": "TT",
+      "prediction": "from the envelope in the pantry in the garden",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2196,
+      "condition": "Base",
+      "prediction": "from the crate in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2196,
+      "condition": "CoT",
+      "prediction": "The stockings were in the crate inside the pantry at the beginning.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2196,
+      "condition": "TT",
+      "prediction": "from the crate in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2100,
+      "condition": "Base",
+      "prediction": "from the crawlspace in the patio",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 2100,
+      "condition": "CoT",
+      "prediction": "the crawlspace, in the crate.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2100,
+      "condition": "TT",
+      "prediction": "The crawlspace.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 4159,
+      "condition": "CoT",
+      "prediction": "Aiden will look for the cucumber in the TV room.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 2711,
+      "condition": "CoT",
+      "prediction": "Aria will look in the back yard for the pants, specifically in the drawer inside the back yard.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5769,
+      "condition": "CoT",
+      "prediction": "The undershirt was not in the garden, the box, or the container at the beginning.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3779,
+      "condition": "TT",
+      "prediction": "bathroom",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 45,
+      "condition": "CoT",
+      "prediction": "Logan will not look for the underclothes in the living room.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 1843,
+      "condition": "TT",
+      "prediction": "The closet in the sunroom",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 5215,
+      "condition": "Base",
+      "prediction": "from the bucket in the cupboard",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4863,
+      "condition": "Base",
+      "prediction": "from the bottle in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4863,
+      "condition": "CoT",
+      "prediction": "in the bottle in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4863,
+      "condition": "TT",
+      "prediction": "bottle in pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3366,
+      "condition": "Base",
+      "prediction": "from the container in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1370,
+      "condition": "Base",
+      "prediction": "from the bottle in the pantry",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 1370,
+      "condition": "CoT",
+      "prediction": "The tangerine is in the drawer in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1370,
+      "condition": "TT",
+      "prediction": "from the bottle in the pantry",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 4668,
+      "condition": "TT",
+      "prediction": "basement in the playroom",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 4990,
+      "condition": "Base",
+      "prediction": "from the hall in the patio",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3821,
+      "condition": "CoT",
+      "prediction": "The box in the suitcase in the den.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2910,
+      "condition": "Base",
+      "prediction": "from the bottle in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2910,
+      "condition": "CoT",
+      "prediction": "in the bottle in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2910,
+      "condition": "TT",
+      "prediction": "From the bottle in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4168,
+      "condition": "CoT",
+      "prediction": "Benjamin will look for the underpants in the front yard, specifically near the bottle.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5059,
+      "condition": "Base",
+      "prediction": "from the bucket in the pantry",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 5059,
+      "condition": "CoT",
+      "prediction": "Charlotte thinks that Evelyn searched the pantry, specifically the container inside the pantry, for the belt.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 315,
+      "condition": "Base",
+      "prediction": "from the crate in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 315,
+      "condition": "CoT",
+      "prediction": "Noah will look for the skirt in the crate in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 315,
+      "condition": "TT",
+      "prediction": "The skirt is in the crate in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2401,
+      "condition": "Base",
+      "prediction": "from the crate in the bathtub",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4669,
+      "condition": "Base",
+      "prediction": "from the bottle in the box in the closet",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4669,
+      "condition": "TT",
+      "prediction": "from the bottle in the box in the closet",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4515,
+      "condition": "CoT",
+      "prediction": "James will look for the slippers in the lounge, specifically in the treasure chest inside the container.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5084,
+      "condition": "Base",
+      "prediction": "The dress is really in the box in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5084,
+      "condition": "CoT",
+      "prediction": "The dress is in the box in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5084,
+      "condition": "TT",
+      "prediction": "The dress is really in the box in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1422,
+      "condition": "CoT",
+      "prediction": "The melon was in the pantry, which is inside the den.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1119,
+      "condition": "Base",
+      "prediction": "from the envelope in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1119,
+      "condition": "CoT",
+      "prediction": "in the envelope in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4809,
+      "condition": "CoT",
+      "prediction": "The stockings were in the bucket, which was in the dining room.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1626,
+      "condition": "Base",
+      "prediction": "The cabbage is in the container in the cupboard in the kitchen.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1626,
+      "condition": "TT",
+      "prediction": "The cabbage is in the container in the cupboard in the kitchen.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5814,
+      "condition": "Base",
+      "prediction": "in the envelope in the pantry",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 5814,
+      "condition": "CoT",
+      "prediction": "in the bucket in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5814,
+      "condition": "TT",
+      "prediction": "from the envelope in the pantry",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3801,
+      "condition": "CoT",
+      "prediction": "in the basement, in the bucket.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 1854,
+      "condition": "Base",
+      "prediction": "The hat was in the suitcase in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1854,
+      "condition": "CoT",
+      "prediction": "The hat was in the suitcase inside the pantry at the beginning.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1854,
+      "condition": "TT",
+      "prediction": "The hat was in the suitcase in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3729,
+      "condition": "Base",
+      "prediction": "from the box in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4894,
+      "condition": "TT",
+      "prediction": "Jacob thinks that Olivia searches for the turnip in both the container and the box in the lounge.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2754,
+      "condition": "TT",
+      "prediction": "master bedroom in the master bedroom",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 723,
+      "condition": "Base",
+      "prediction": "from the suitcase in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5066,
+      "condition": "CoT",
+      "prediction": "The underpants are in the pantry, which is inside the kitchen.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 803,
+      "condition": "CoT",
+      "prediction": "in the basement.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 2850,
+      "condition": "CoT",
+      "prediction": "Jackson will look for the lettuce in the study, specifically in the crate.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 213,
+      "condition": "Base",
+      "prediction": "From the crate in the bathtub in the bedroom.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 213,
+      "condition": "TT",
+      "prediction": "From the crate in the bathtub in the bedroom.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5229,
+      "condition": "CoT",
+      "prediction": "The radish is in the pantry, which is inside the den.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3290,
+      "condition": "CoT",
+      "prediction": "The pajamas were in the bucket, which was stored in the den.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1959,
+      "condition": "CoT",
+      "prediction": "The potato was in the pantry, which is within the study.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3497,
+      "condition": "Base",
+      "prediction": "in the box in the pantry",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3497,
+      "condition": "CoT",
+      "prediction": "Owen will look for the jacket in the box in the pantry.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3497,
+      "condition": "TT",
+      "prediction": "A box in the pantry",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 290,
+      "condition": "Base",
+      "prediction": "from the back yard",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3716,
+      "condition": "Base",
+      "prediction": "from the container in the pantry",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3716,
+      "condition": "CoT",
+      "prediction": "Charlotte thinks that Ella searches for the melon in the pantry, where the envelope is kept.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5665,
+      "condition": "Base",
+      "prediction": "from the suitcase in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5665,
+      "condition": "CoT",
+      "prediction": "The beans were initially in the suitcase in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5665,
+      "condition": "TT",
+      "prediction": "from the suitcase in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2168,
+      "condition": "Base",
+      "prediction": "from the crate in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2168,
+      "condition": "CoT",
+      "prediction": "in the crate in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2168,
+      "condition": "TT",
+      "prediction": "from the suitcase in the pantry",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3763,
+      "condition": "TT",
+      "prediction": "closet in the closet",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 337,
+      "condition": "CoT",
+      "prediction": "The lounge, in the crate.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 2073,
+      "condition": "Base",
+      "prediction": "from the bucket in the pantry",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 2073,
+      "condition": "CoT",
+      "prediction": "Benjamin thinks that Alexander searches for the grapes in the treasure chest in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2073,
+      "condition": "TT",
+      "prediction": "The grapes are in the bucket in the pantry.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 4164,
+      "condition": "CoT",
+      "prediction": "The apple was in the bathtub, which is inside the den.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2649,
+      "condition": "CoT",
+      "prediction": "The pineapple was in the pantry, which is situated in the study, at the beginning.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5754,
+      "condition": "CoT",
+      "prediction": "The onion was initially in the pantry, which is inside the attic.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4932,
+      "condition": "CoT",
+      "prediction": "The potato is in the pantry, which is in the hall.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 222,
+      "condition": "Base",
+      "prediction": "not in the drawer in the workshop",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1974,
+      "condition": "CoT",
+      "prediction": "Liam thinks that Lily searches for the asparagus in the office, either in the container or the box.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3691,
+      "condition": "CoT",
+      "prediction": "The underclothes are in the suitcase, which is inside the porch.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3333,
+      "condition": "Base",
+      "prediction": "from container in pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3333,
+      "condition": "CoT",
+      "prediction": "Charlotte searches for the belt in the container in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3333,
+      "condition": "TT",
+      "prediction": "Charlotte thinks the belt is in the container in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5564,
+      "condition": "CoT",
+      "prediction": "Nathan searches for the asparagus in the container in the cupboard.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1201,
+      "condition": "Base",
+      "prediction": "from the bathtub in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1201,
+      "condition": "TT",
+      "prediction": "from the bathtub in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1088,
+      "condition": "Base",
+      "prediction": "The peach is inside the crate in the pantry.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 1088,
+      "condition": "CoT",
+      "prediction": "The peach is in the drawer in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1088,
+      "condition": "TT",
+      "prediction": "The peach is inside the crate in the pantry.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 5759,
+      "condition": "CoT",
+      "prediction": "in the bathtub, which is inside the lounge.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 5759,
+      "condition": "TT",
+      "prediction": "bathroom in the lounge",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 5595,
+      "condition": "Base",
+      "prediction": "from the box in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 646,
+      "condition": "CoT",
+      "prediction": "The jeans are really in the pantry, which is inside the kitchen.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1445,
+      "condition": "CoT",
+      "prediction": "The pear was in the pantry, which is inside the patio.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5513,
+      "condition": "CoT",
+      "prediction": "The strawberry is in the pantry, which is in the porch.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5593,
+      "condition": "CoT",
+      "prediction": "The slippers are inside the bucket, which is inside the office.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3754,
+      "condition": "Base",
+      "prediction": "from the back yard",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3754,
+      "condition": "TT",
+      "prediction": "back yard",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3694,
+      "condition": "TT",
+      "prediction": "bathhtub in crawlspace",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 1917,
+      "condition": "TT",
+      "prediction": "Ava thinks that Nathan searches for the slacks in the closet.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 2718,
+      "condition": "Base",
+      "prediction": "from the treasure chest in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2718,
+      "condition": "CoT",
+      "prediction": "Nathan thinks that James searches for the undershirt in the bucket in the pantry.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 2718,
+      "condition": "TT",
+      "prediction": "The undershirt is in the treasure chest in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 5176,
+      "condition": "CoT",
+      "prediction": "Mia searches for the dress in the laundry, specifically in the treasure chest.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 4012,
+      "condition": "TT",
+      "prediction": "from the bottle in the crawlspace to the container in the crawlspace",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2592,
+      "condition": "CoT",
+      "prediction": "The sunroom.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 1717,
+      "condition": "CoT",
+      "prediction": "in the drawer in the pantry.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 1717,
+      "condition": "TT",
+      "prediction": "from the drawer in the pantry",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 1182,
+      "condition": "CoT",
+      "prediction": "The suitcase, which is being held by the staircase.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 4828,
+      "condition": "Base",
+      "prediction": "from the bucket in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3524,
+      "condition": "Base",
+      "prediction": "from the cupboard in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3524,
+      "condition": "CoT",
+      "prediction": "in the cupboard in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 3524,
+      "condition": "TT",
+      "prediction": "The tangerine is in the cupboard in the pantry.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 1840,
+      "condition": "TT",
+      "prediction": "The sweatshirt is in the basket in the pantry.",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 3912,
+      "condition": "TT",
+      "prediction": "The garden in the master bedroom",
+      "official": false,
+      "strict": null
+    },
+    {
+      "row_id": 824,
+      "condition": "Base",
+      "prediction": "from the container in the pantry",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 824,
+      "condition": "CoT",
+      "prediction": "Hannah will look for the tie in the pantry, which is inside the cellar.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 4545,
+      "condition": "CoT",
+      "prediction": "Lucas will look for the boots in the basement, specifically in the bottle or the drawer.",
+      "official": true,
+      "strict": null
+    },
+    {
+      "row_id": 2197,
+      "condition": "TT",
+      "prediction": "The container with the dress is in the drawer in the staircase.",
+      "official": true,
+      "strict": null
+    }
+  ],
+  "final_review_queue": [
+    {
+      "row_id": 5058,
+      "condition": "Base",
+      "prediction": "from the sunroom in the sunroom",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 799,
+      "condition": "Base",
+      "prediction": "from the drawer in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 746,
+      "condition": "Base",
+      "prediction": "from the container in the bathtub in the lounge",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3911,
+      "condition": "Base",
+      "prediction": "from the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5823,
+      "condition": "Base",
+      "prediction": "from the cellar",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4380,
+      "condition": "Base",
+      "prediction": "from the cellar",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4330,
+      "condition": "Base",
+      "prediction": "from the drawer in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3388,
+      "condition": "Base",
+      "prediction": "from the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 132,
+      "condition": "Base",
+      "prediction": "From the crate in the cellar to the suitcase in the cellar",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 599,
+      "condition": "Base",
+      "prediction": "from the envelope in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 981,
+      "condition": "Base",
+      "prediction": "from the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1509,
+      "condition": "Base",
+      "prediction": "from the workshop in the basement",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2143,
+      "condition": "Base",
+      "prediction": "from the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4868,
+      "condition": "Base",
+      "prediction": "from the envelope in the pantry in the garden",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2196,
+      "condition": "Base",
+      "prediction": "from the crate in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2100,
+      "condition": "Base",
+      "prediction": "from the crawlspace in the patio",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5215,
+      "condition": "Base",
+      "prediction": "from the bucket in the cupboard",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4863,
+      "condition": "Base",
+      "prediction": "from the bottle in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3366,
+      "condition": "Base",
+      "prediction": "from the container in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1370,
+      "condition": "Base",
+      "prediction": "from the bottle in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4990,
+      "condition": "Base",
+      "prediction": "from the hall in the patio",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2910,
+      "condition": "Base",
+      "prediction": "from the bottle in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5059,
+      "condition": "Base",
+      "prediction": "from the bucket in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 315,
+      "condition": "Base",
+      "prediction": "from the crate in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2401,
+      "condition": "Base",
+      "prediction": "from the crate in the bathtub",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4669,
+      "condition": "Base",
+      "prediction": "from the bottle in the box in the closet",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5084,
+      "condition": "Base",
+      "prediction": "The dress is really in the box in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1119,
+      "condition": "Base",
+      "prediction": "from the envelope in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1626,
+      "condition": "Base",
+      "prediction": "The cabbage is in the container in the cupboard in the kitchen.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5814,
+      "condition": "Base",
+      "prediction": "in the envelope in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1854,
+      "condition": "Base",
+      "prediction": "The hat was in the suitcase in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3729,
+      "condition": "Base",
+      "prediction": "from the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 723,
+      "condition": "Base",
+      "prediction": "from the suitcase in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 213,
+      "condition": "Base",
+      "prediction": "From the crate in the bathtub in the bedroom.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3497,
+      "condition": "Base",
+      "prediction": "in the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 290,
+      "condition": "Base",
+      "prediction": "from the back yard",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3716,
+      "condition": "Base",
+      "prediction": "from the container in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5665,
+      "condition": "Base",
+      "prediction": "from the suitcase in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2168,
+      "condition": "Base",
+      "prediction": "from the crate in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2073,
+      "condition": "Base",
+      "prediction": "from the bucket in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 222,
+      "condition": "Base",
+      "prediction": "not in the drawer in the workshop",
+      "reasons": [
+        "ambiguous_or_negated"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3333,
+      "condition": "Base",
+      "prediction": "from container in pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1201,
+      "condition": "Base",
+      "prediction": "from the bathtub in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1088,
+      "condition": "Base",
+      "prediction": "The peach is inside the crate in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5595,
+      "condition": "Base",
+      "prediction": "from the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3754,
+      "condition": "Base",
+      "prediction": "from the back yard",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2718,
+      "condition": "Base",
+      "prediction": "from the treasure chest in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4828,
+      "condition": "Base",
+      "prediction": "from the bucket in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3524,
+      "condition": "Base",
+      "prediction": "from the cupboard in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 824,
+      "condition": "Base",
+      "prediction": "from the container in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2204,
+      "condition": "CoT",
+      "prediction": "The patio.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1001,
+      "condition": "CoT",
+      "prediction": "Logan thinks that Olivia searches for the jacket inside the staircase, specifically in the envelope.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5058,
+      "condition": "CoT",
+      "prediction": "in the bathtub, which is in the sunroom.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 799,
+      "condition": "CoT",
+      "prediction": "James will look for the coat in the drawer in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 746,
+      "condition": "CoT",
+      "prediction": "The spinach is in the bathtub, which is in the lounge.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5167,
+      "condition": "CoT",
+      "prediction": "Benjamin will look for the slacks inside the master bedroom, specifically in the envelope.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4230,
+      "condition": "CoT",
+      "prediction": "Alexander thinks that Amelia searched the basement, particularly the area where the envelope was.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5823,
+      "condition": "CoT",
+      "prediction": "the cellar, in the bottle.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4380,
+      "condition": "CoT",
+      "prediction": "The cellar.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1827,
+      "condition": "CoT",
+      "prediction": "James will look for the melon in the front yard, inside the envelope.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3585,
+      "condition": "CoT",
+      "prediction": "The staircase.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3569,
+      "condition": "CoT",
+      "prediction": "Emily thinks that Isla searches for the banana in the back yard.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4330,
+      "condition": "CoT",
+      "prediction": "in the drawer in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1980,
+      "condition": "CoT",
+      "prediction": "The belt is in the basket, which is inside the attic.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1121,
+      "condition": "CoT",
+      "prediction": "The peas are in the crate, which is inside the laundry.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 981,
+      "condition": "CoT",
+      "prediction": "Aiden will look for the sweatshirt in the box in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2143,
+      "condition": "CoT",
+      "prediction": "the persimmon is in the box in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4868,
+      "condition": "CoT",
+      "prediction": "The tomato is in the envelope in the pantry, which is in the garden.",
+      "reasons": [
+        "coordination_or_list_requires_review",
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2196,
+      "condition": "CoT",
+      "prediction": "The stockings were in the crate inside the pantry at the beginning.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2100,
+      "condition": "CoT",
+      "prediction": "the crawlspace, in the crate.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4159,
+      "condition": "CoT",
+      "prediction": "Aiden will look for the cucumber in the TV room.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2711,
+      "condition": "CoT",
+      "prediction": "Aria will look in the back yard for the pants, specifically in the drawer inside the back yard.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5769,
+      "condition": "CoT",
+      "prediction": "The undershirt was not in the garden, the box, or the container at the beginning.",
+      "reasons": [
+        "ambiguous_or_negated",
+        "coordination_or_list_requires_review",
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 45,
+      "condition": "CoT",
+      "prediction": "Logan will not look for the underclothes in the living room.",
+      "reasons": [
+        "ambiguous_or_negated",
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4863,
+      "condition": "CoT",
+      "prediction": "in the bottle in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1370,
+      "condition": "CoT",
+      "prediction": "The tangerine is in the drawer in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3821,
+      "condition": "CoT",
+      "prediction": "The box in the suitcase in the den.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2910,
+      "condition": "CoT",
+      "prediction": "in the bottle in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4168,
+      "condition": "CoT",
+      "prediction": "Benjamin will look for the underpants in the front yard, specifically near the bottle.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5059,
+      "condition": "CoT",
+      "prediction": "Charlotte thinks that Evelyn searched the pantry, specifically the container inside the pantry, for the belt.",
+      "reasons": [
+        "coordination_or_list_requires_review",
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 315,
+      "condition": "CoT",
+      "prediction": "Noah will look for the skirt in the crate in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4515,
+      "condition": "CoT",
+      "prediction": "James will look for the slippers in the lounge, specifically in the treasure chest inside the container.",
+      "reasons": [
+        "coordination_or_list_requires_review",
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5084,
+      "condition": "CoT",
+      "prediction": "The dress is in the box in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1422,
+      "condition": "CoT",
+      "prediction": "The melon was in the pantry, which is inside the den.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1119,
+      "condition": "CoT",
+      "prediction": "in the envelope in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4809,
+      "condition": "CoT",
+      "prediction": "The stockings were in the bucket, which was in the dining room.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5814,
+      "condition": "CoT",
+      "prediction": "in the bucket in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3801,
+      "condition": "CoT",
+      "prediction": "in the basement, in the bucket.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1854,
+      "condition": "CoT",
+      "prediction": "The hat was in the suitcase inside the pantry at the beginning.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5066,
+      "condition": "CoT",
+      "prediction": "The underpants are in the pantry, which is inside the kitchen.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 803,
+      "condition": "CoT",
+      "prediction": "in the basement.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2850,
+      "condition": "CoT",
+      "prediction": "Jackson will look for the lettuce in the study, specifically in the crate.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5229,
+      "condition": "CoT",
+      "prediction": "The radish is in the pantry, which is inside the den.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3290,
+      "condition": "CoT",
+      "prediction": "The pajamas were in the bucket, which was stored in the den.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1959,
+      "condition": "CoT",
+      "prediction": "The potato was in the pantry, which is within the study.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3497,
+      "condition": "CoT",
+      "prediction": "Owen will look for the jacket in the box in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3716,
+      "condition": "CoT",
+      "prediction": "Charlotte thinks that Ella searches for the melon in the pantry, where the envelope is kept.",
+      "reasons": [
+        "coordination_or_list_requires_review",
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5665,
+      "condition": "CoT",
+      "prediction": "The beans were initially in the suitcase in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2168,
+      "condition": "CoT",
+      "prediction": "in the crate in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 337,
+      "condition": "CoT",
+      "prediction": "The lounge, in the crate.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2073,
+      "condition": "CoT",
+      "prediction": "Benjamin thinks that Alexander searches for the grapes in the treasure chest in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4164,
+      "condition": "CoT",
+      "prediction": "The apple was in the bathtub, which is inside the den.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2649,
+      "condition": "CoT",
+      "prediction": "The pineapple was in the pantry, which is situated in the study, at the beginning.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5754,
+      "condition": "CoT",
+      "prediction": "The onion was initially in the pantry, which is inside the attic.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4932,
+      "condition": "CoT",
+      "prediction": "The potato is in the pantry, which is in the hall.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1974,
+      "condition": "CoT",
+      "prediction": "Liam thinks that Lily searches for the asparagus in the office, either in the container or the box.",
+      "reasons": [
+        "ambiguous_or_negated",
+        "coordination_or_list_requires_review",
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3691,
+      "condition": "CoT",
+      "prediction": "The underclothes are in the suitcase, which is inside the porch.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3333,
+      "condition": "CoT",
+      "prediction": "Charlotte searches for the belt in the container in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5564,
+      "condition": "CoT",
+      "prediction": "Nathan searches for the asparagus in the container in the cupboard.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1088,
+      "condition": "CoT",
+      "prediction": "The peach is in the drawer in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5759,
+      "condition": "CoT",
+      "prediction": "in the bathtub, which is inside the lounge.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 646,
+      "condition": "CoT",
+      "prediction": "The jeans are really in the pantry, which is inside the kitchen.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1445,
+      "condition": "CoT",
+      "prediction": "The pear was in the pantry, which is inside the patio.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5513,
+      "condition": "CoT",
+      "prediction": "The strawberry is in the pantry, which is in the porch.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5593,
+      "condition": "CoT",
+      "prediction": "The slippers are inside the bucket, which is inside the office.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2718,
+      "condition": "CoT",
+      "prediction": "Nathan thinks that James searches for the undershirt in the bucket in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5176,
+      "condition": "CoT",
+      "prediction": "Mia searches for the dress in the laundry, specifically in the treasure chest.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2592,
+      "condition": "CoT",
+      "prediction": "The sunroom.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1717,
+      "condition": "CoT",
+      "prediction": "in the drawer in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1182,
+      "condition": "CoT",
+      "prediction": "The suitcase, which is being held by the staircase.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3524,
+      "condition": "CoT",
+      "prediction": "in the cupboard in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 824,
+      "condition": "CoT",
+      "prediction": "Hannah will look for the tie in the pantry, which is inside the cellar.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4545,
+      "condition": "CoT",
+      "prediction": "Lucas will look for the boots in the basement, specifically in the bottle or the drawer.",
+      "reasons": [
+        "ambiguous_or_negated",
+        "coordination_or_list_requires_review",
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 799,
+      "condition": "TT",
+      "prediction": "James will look for the coat in the drawer in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 746,
+      "condition": "TT",
+      "prediction": "from the container in the bathtub in the lounge",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5831,
+      "condition": "TT",
+      "prediction": "Ethan thinks that Isabella searches for the broccoli in the pantry in the container.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5167,
+      "condition": "TT",
+      "prediction": "Benjamin will look for the slacks in the envelope in the pantry of the master bedroom.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5064,
+      "condition": "TT",
+      "prediction": "TV room in the TV room",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1243,
+      "condition": "TT",
+      "prediction": "master bedroom in the dining room",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3557,
+      "condition": "TT",
+      "prediction": "Owen thinks Alexander searches for the pants in the garden.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4330,
+      "condition": "TT",
+      "prediction": "drawer in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 132,
+      "condition": "TT",
+      "prediction": "From the crate in the cellar to the suitcase in the cellar",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 599,
+      "condition": "TT",
+      "prediction": "A cupboard in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 981,
+      "condition": "TT",
+      "prediction": "in the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2143,
+      "condition": "TT",
+      "prediction": "from the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4868,
+      "condition": "TT",
+      "prediction": "from the envelope in the pantry in the garden",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2196,
+      "condition": "TT",
+      "prediction": "from the crate in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2100,
+      "condition": "TT",
+      "prediction": "The crawlspace.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3779,
+      "condition": "TT",
+      "prediction": "bathroom",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1843,
+      "condition": "TT",
+      "prediction": "The closet in the sunroom",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4863,
+      "condition": "TT",
+      "prediction": "bottle in pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1370,
+      "condition": "TT",
+      "prediction": "from the bottle in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4668,
+      "condition": "TT",
+      "prediction": "basement in the playroom",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2910,
+      "condition": "TT",
+      "prediction": "From the bottle in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 315,
+      "condition": "TT",
+      "prediction": "The skirt is in the crate in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4669,
+      "condition": "TT",
+      "prediction": "from the bottle in the box in the closet",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5084,
+      "condition": "TT",
+      "prediction": "The dress is really in the box in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1626,
+      "condition": "TT",
+      "prediction": "The cabbage is in the container in the cupboard in the kitchen.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5814,
+      "condition": "TT",
+      "prediction": "from the envelope in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1854,
+      "condition": "TT",
+      "prediction": "The hat was in the suitcase in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4894,
+      "condition": "TT",
+      "prediction": "Jacob thinks that Olivia searches for the turnip in both the container and the box in the lounge.",
+      "reasons": [
+        "ambiguous_or_negated",
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2754,
+      "condition": "TT",
+      "prediction": "master bedroom in the master bedroom",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 213,
+      "condition": "TT",
+      "prediction": "From the crate in the bathtub in the bedroom.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3497,
+      "condition": "TT",
+      "prediction": "A box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5665,
+      "condition": "TT",
+      "prediction": "from the suitcase in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2168,
+      "condition": "TT",
+      "prediction": "from the suitcase in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3763,
+      "condition": "TT",
+      "prediction": "closet in the closet",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2073,
+      "condition": "TT",
+      "prediction": "The grapes are in the bucket in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3333,
+      "condition": "TT",
+      "prediction": "Charlotte thinks the belt is in the container in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1201,
+      "condition": "TT",
+      "prediction": "from the bathtub in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1088,
+      "condition": "TT",
+      "prediction": "The peach is inside the crate in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 5759,
+      "condition": "TT",
+      "prediction": "bathroom in the lounge",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3754,
+      "condition": "TT",
+      "prediction": "back yard",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3694,
+      "condition": "TT",
+      "prediction": "bathhtub in crawlspace",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1917,
+      "condition": "TT",
+      "prediction": "Ava thinks that Nathan searches for the slacks in the closet.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2718,
+      "condition": "TT",
+      "prediction": "The undershirt is in the treasure chest in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 4012,
+      "condition": "TT",
+      "prediction": "from the bottle in the crawlspace to the container in the crawlspace",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1717,
+      "condition": "TT",
+      "prediction": "from the drawer in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3524,
+      "condition": "TT",
+      "prediction": "The tangerine is in the cupboard in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 1840,
+      "condition": "TT",
+      "prediction": "The sweatshirt is in the basket in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 3912,
+      "condition": "TT",
+      "prediction": "The garden in the master bedroom",
+      "reasons": [
+        "no_known_location"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "row_id": 2197,
+      "condition": "TT",
+      "prediction": "The container with the dress is in the drawer in the staircase.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "human_reviewed": false
+    }
+  ],
+  "intermediate_semantic_human_review": "not completed for 400 TT traces",
+  "generated_unix": 1793032629.2540748
+}

@@ -1,0 +1,56 @@
+{
+  "scope": "Publication copies only; original protected source unchanged",
+  "affected_original_files": [
+    {
+      "source_path": "official/mmtom_qa/test_mmtom.py",
+      "original_sha256": "1919df344b3214cb1b9b687f6d36dcc53348213fe67f1fd290a90df65b9f816c",
+      "publication_sha256": "7ea6717341f860ba3e30cb28423d0a8b60ba9d903e4c9fb997ad085369e7dbb8",
+      "reason": "Credential-shaped literal in unused upstream MMToM script; publication copy only",
+      "original_source_modified": false,
+      "credential_value_recorded": false
+    },
+    {
+      "source_path": "experiments/adaptive_a_v1/official/mmtom_qa/test_mmtom.py",
+      "original_sha256": "1919df344b3214cb1b9b687f6d36dcc53348213fe67f1fd290a90df65b9f816c",
+      "publication_sha256": "7ea6717341f860ba3e30cb28423d0a8b60ba9d903e4c9fb997ad085369e7dbb8",
+      "reason": "Credential-shaped literal in unused upstream MMToM script; publication copy only",
+      "original_source_modified": false,
+      "credential_value_recorded": false
+    },
+    {
+      "source_path": "experiments/adaptive_a_v1/records/adaptive_source_snapshot/official/mmtom_qa/test_mmtom.py",
+      "original_sha256": "1919df344b3214cb1b9b687f6d36dcc53348213fe67f1fd290a90df65b9f816c",
+      "publication_sha256": "7ea6717341f860ba3e30cb28423d0a8b60ba9d903e4c9fb997ad085369e7dbb8",
+      "reason": "Credential-shaped literal in unused upstream MMToM script; publication copy only",
+      "original_source_modified": false,
+      "credential_value_recorded": false
+    },
+    {
+      "source_path": "experiments/adaptive_a_v2/official/mmtom_qa/test_mmtom.py",
+      "original_sha256": "1919df344b3214cb1b9b687f6d36dcc53348213fe67f1fd290a90df65b9f816c",
+      "publication_sha256": "7ea6717341f860ba3e30cb28423d0a8b60ba9d903e4c9fb997ad085369e7dbb8",
+      "reason": "Credential-shaped literal in unused upstream MMToM script; publication copy only",
+      "original_source_modified": false,
+      "credential_value_recorded": false
+    },
+    {
+      "source_path": "experiments/adaptive_a_v2/records/adaptive_source_snapshot/official/mmtom_qa/test_mmtom.py",
+      "original_sha256": "1919df344b3214cb1b9b687f6d36dcc53348213fe67f1fd290a90df65b9f816c",
+      "publication_sha256": "7ea6717341f860ba3e30cb28423d0a8b60ba9d903e4c9fb997ad085369e7dbb8",
+      "reason": "Credential-shaped literal in unused upstream MMToM script; publication copy only",
+      "original_source_modified": false,
+      "credential_value_recorded": false
+    },
+    {
+      "source_path": "runs/bf16_official600_v1/source_snapshot/official/mmtom_qa/test_mmtom.py",
+      "original_sha256": "1919df344b3214cb1b9b687f6d36dcc53348213fe67f1fd290a90df65b9f816c",
+      "publication_sha256": "7ea6717341f860ba3e30cb28423d0a8b60ba9d903e4c9fb997ad085369e7dbb8",
+      "reason": "Credential-shaped literal in unused upstream MMToM script; publication copy only",
+      "original_source_modified": false,
+      "credential_value_recorded": false
+    }
+  ],
+  "current_tomi_execution_path_changed": false,
+  "original_frozen_hashes_preserved_as_historical_evidence": true,
+  "published_unused_mmtom_script_does_not_match_original_frozen_hash": true
+}

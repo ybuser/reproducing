@@ -1,0 +1,16 @@
+Target agent: {agent}
+<previous hypothesis>
+{previous}
+</previous hypothesis>
+<updated hypothesis>
+{updated}
+</updated hypothesis>
+<agent perspective through current step>
+{perspective}
+</agent perspective through current step>
+<current perception>
+{perception}
+</current perception>
+
+Question: Given the information available to {agent} and their previous belief, how plausible is this updated hypothesis from {agent}'s perspective?
+{options}

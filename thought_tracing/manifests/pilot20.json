@@ -1,0 +1,583 @@
+{
+  "seed": 20261020,
+  "selection_algorithm": "stdlib random.Random(seed).shuffle; smoke strata first, then pilot strata; first eligible rows; unique normalized story and exact event-sequence template across all 23 rows",
+  "dataset": "paraphrased_tomi/test",
+  "source_files": {
+    "test.txt": "2c741e940736af097393245348cc1362102ec488450b63cf2c8190ac5a263c6c",
+    "test.trace": "ba6a7d93c035f975e06cf7a3ec1b9f37d3d3008ddaf3af42b86ffb05c09c3595"
+  },
+  "question_type_definition": "official revised_tomi/test_tomi.py:257-260; *_tom=false belief, *_no_tom=true belief, 0/1 are agent indices; final trace field describes scenario and is not substituted for qtype",
+  "limitations": "Only belief questions, excluding reality/memory. Lexically different stories and distinct exact event templates can share broader generator families; samples are not assumed independent.",
+  "split": "pilot20",
+  "count": 20,
+  "rows": [
+    {
+      "row_id": 3063,
+      "question_line_1based": 33394,
+      "question_index": 1,
+      "story": "Mila came by the living room. William arrived in the living room. The corn is set upon in the basket. The basket is located in the living room. William set the corn in the bathtub. Inside the living room is a bathtub. Mila left the living room. Alexander approached the TV room. Alexander took off from the TV room. Mila shuffled into the living room.",
+      "question": "Where will William look for the corn?",
+      "answer": "bathtub",
+      "qtype": "first_order_1_no_tom",
+      "order": 1,
+      "belief": "true",
+      "stratum": "order1_true",
+      "story_sha256": "325e2c80d0c2ead96e217f142d1ae47391debeb79c540aa79dc65f7704bf981e",
+      "raw_story_sha256": "1c4ba1df7262e145ae80c790c49104386b1378537df8ed6678fb9358e30e578f",
+      "trace_events": [
+        "enter_agent_1",
+        "enter_agent_0",
+        "agent_0_moves_obj",
+        "agent_1_exits",
+        "agent_1_reenters_loc",
+        "agent_2_enters",
+        "agent_2_exits"
+      ],
+      "template_sha256": "c56332223a7dbe06327949dd65bf77666591d81038498e88f5898d17cb680ade",
+      "scenario_type": "true_belief",
+      "candidate_answer_locations": [
+        "bathtub",
+        "basket"
+      ]
+    },
+    {
+      "row_id": 492,
+      "question_line_1based": 5412,
+      "question_index": 1,
+      "story": "Emma stepped into the den. Jack is located in the den. The cherry is kept in the treasure chest. The den contains the treasure chest. Emma placed the cherry in the envelope. Inside the den is a envelope. Jack left the den. Emma sprinted from the den. Jack stepped into the den.",
+      "question": "Where will Jack look for the cherry?",
+      "answer": "envelope",
+      "qtype": "first_order_1_no_tom",
+      "order": 1,
+      "belief": "true",
+      "stratum": "order1_true",
+      "story_sha256": "8a5760242995d7fb5ac088180d2e9269b01746872dffedfac49016d236efe327",
+      "raw_story_sha256": "4d7c4c8bfcfaa9ce6eefc9926fb9418ddbf28d1413ce23e529d6a8c955f1ff49",
+      "trace_events": [
+        "enter_agent_0",
+        "enter_agent_1",
+        "agent_0_moves_obj",
+        "agent_1_exits",
+        "agent_0_exits",
+        "agent_1_reenters_loc"
+      ],
+      "template_sha256": "514f74fdc491908105d5638afa76510f06af3e12c0fe2ebb7e87dc9b27cb4be8",
+      "scenario_type": "second_order_false_belief",
+      "candidate_answer_locations": [
+        "treasure chest",
+        "envelope"
+      ]
+    },
+    {
+      "row_id": 5924,
+      "question_line_1based": 64711,
+      "question_index": 1,
+      "story": "Carter sidled into the basement. Elizabeth showed up at the basement. The drawer is holding the pajamas within it. The drawer is found in the basement. Elizabeth transported the pajamas to the suitcase. The suitcase is found in the basement. Carter came out of the basement.",
+      "question": "Where will Elizabeth look for the pajamas?",
+      "answer": "suitcase",
+      "qtype": "first_order_1_no_tom",
+      "order": 1,
+      "belief": "true",
+      "stratum": "order1_true",
+      "story_sha256": "ca1b64b4326d02d9ed5e7e83f9d75fbf68140ee2ddf19b65bc21817bae12cb79",
+      "raw_story_sha256": "52eb12d685aa707a8eff20a97d00690c59fb3bbf0530ca29f87deaca11d714d3",
+      "trace_events": [
+        "enter_agent_1",
+        "enter_agent_0",
+        "agent_0_moves_obj",
+        "agent_1_exits"
+      ],
+      "template_sha256": "7f04c046ddbb1ea8b09fe0c67b41be8652c61fbf8d13a25d93dfabb756b22ec9",
+      "scenario_type": "true_belief",
+      "candidate_answer_locations": [
+        "suitcase",
+        "drawer"
+      ]
+    },
+    {
+      "row_id": 4242,
+      "question_line_1based": 46311,
+      "question_index": 1,
+      "story": "Hannah approached the closet. Mila went to the closet. Mila is mad about the cherry. Chloe entered the closet. Chloe left the closet. The pajamas is deposited in the bathtub. The bathtub is set upon in the closet. Hannah sprinted from the closet. Mila hates corn. Hannah tiptoed into the closet. Mila carried the pajamas to the crate. The closet contains the crate.",
+      "question": "Where will Mila look for the pajamas?",
+      "answer": "crate",
+      "qtype": "first_order_1_no_tom",
+      "order": 1,
+      "belief": "true",
+      "stratum": "order1_true",
+      "story_sha256": "2782020f9228310e7a20890e79c69a18d129c2e88478884be5f3255f6d300c23",
+      "raw_story_sha256": "91854e79b9c500a87421129fd9587ee13993bd0c3df5b111fd9d72c4ae4d72b5",
+      "trace_events": [
+        "enter_agent_1",
+        "enter_agent_0",
+        "agent_2_enters",
+        "agent_2_exits",
+        "agent_1_exits",
+        "agent_1_reenters_loc",
+        "agent_0_moves_obj"
+      ],
+      "template_sha256": "bfba5db4f3ca339e29de1b8d0a51db72456fdc6880dc24bbf66dc51d7fb9d80f",
+      "scenario_type": "true_belief",
+      "candidate_answer_locations": [
+        "bathtub",
+        "crate"
+      ]
+    },
+    {
+      "row_id": 5257,
+      "question_line_1based": 57457,
+      "question_index": 1,
+      "story": "Aiden came into the dining room. Oliver came into the dining room. The treasure chest has the orange within it. The treasure chest is put to rest in the dining room. Oliver carried the orange to the suitcase. The dining room is keeping the suitcase. Aiden ran from the dining room. Jayden arrived at the back yard. Oliver walked out of the dining room. Aiden entered the dining room.",
+      "question": "Where will Oliver look for the orange?",
+      "answer": "suitcase",
+      "qtype": "first_order_1_no_tom",
+      "order": 1,
+      "belief": "true",
+      "stratum": "order1_true",
+      "story_sha256": "2e2f3e57d83f2c8921c40a6ed60bed6d485b2a2a9e841974d42b2a51378b4149",
+      "raw_story_sha256": "6972ee2067ec842a411b8059861e3f0f5ba9dbfcbbe39b85e8ecb9f68e0a1713",
+      "trace_events": [
+        "enter_agent_1",
+        "enter_agent_0",
+        "agent_0_moves_obj",
+        "agent_1_exits",
+        "agent_0_exits",
+        "agent_2_enters",
+        "agent_1_reenters_loc"
+      ],
+      "template_sha256": "08ddfc4800c5dc32bdbead3d5965c381f7ad7f11806299883b5bba7c1ce49269",
+      "scenario_type": "second_order_false_belief",
+      "candidate_answer_locations": [
+        "treasure chest",
+        "suitcase"
+      ]
+    },
+    {
+      "row_id": 5317,
+      "question_line_1based": 58121,
+      "question_index": 1,
+      "story": "Chloe shuffled into the hallway. Oliver entered the back yard. Benjamin crept into the hallway. Oliver stepped out of the back yard. The carrot is within the bathtub. The hallway contains the bathtub. Chloe tiptoed from the hallway. Benjamin transported the carrot to the box. There is a box in the hallway.",
+      "question": "Where will Chloe look for the carrot?",
+      "answer": "bathtub",
+      "qtype": "first_order_0_tom",
+      "order": 1,
+      "belief": "false",
+      "stratum": "order1_false",
+      "story_sha256": "c2d8fbe522c0c914c54b1817b6e3091f16c52f8af3a418b331c657f0cc7923eb",
+      "raw_story_sha256": "703b1548968beb6dfb16809dd4d68ab0ecc15d3eafbd6324725cc88497d7851b",
+      "trace_events": [
+        "enter_agent_1",
+        "agent_2_enters",
+        "enter_agent_0",
+        "agent_2_exits",
+        "agent_1_exits",
+        "agent_0_moves_obj"
+      ],
+      "template_sha256": "1e13ac410cf355856086bfca967135db4ed88acc80faa9fd3dc500ceb4c6da57",
+      "scenario_type": "false_belief",
+      "candidate_answer_locations": [
+        "bathtub",
+        "box"
+      ]
+    },
+    {
+      "row_id": 4293,
+      "question_line_1based": 46857,
+      "question_index": 1,
+      "story": "Evelyn walked into the lounge. Benjamin shuffled into the lounge. The shoes is set upon in the bottle. The bottle is stationed in the lounge. The t-shirt terrifies Alexander. Evelyn sprinted from the lounge. Alexander arrived at the lounge. Evelyn is enamored with the radish. Evelyn entered the front yard. Benjamin pushed the shoes to the pantry. The pantry is in the lounge.",
+      "question": "Where will Evelyn look for the shoes?",
+      "answer": "bottle",
+      "qtype": "first_order_0_tom",
+      "order": 1,
+      "belief": "false",
+      "stratum": "order1_false",
+      "story_sha256": "f4f2120cca722c1c57b608ad831a172b3c8c2058359404aefff05a7a98200374",
+      "raw_story_sha256": "94a407901b16bf3d7c4643a06e3dc15ef75f9825ab9646e47a8b4de6098401a3",
+      "trace_events": [
+        "enter_agent_1",
+        "enter_agent_0",
+        "agent_1_exits",
+        "agent_1_reenters_alt_loc",
+        "agent_2_enters",
+        "agent_0_moves_obj"
+      ],
+      "template_sha256": "8d10f83d60739f19682ec12a4fda80149d72c92f15784e1b526c17396d88e3ac",
+      "scenario_type": "true_belief",
+      "candidate_answer_locations": [
+        "bottle",
+        "pantry"
+      ]
+    },
+    {
+      "row_id": 3730,
+      "question_line_1based": 40717,
+      "question_index": 1,
+      "story": "Olivia entered the lounge. Mila visited the lounge. Isabella is cap-obsessed. The socks is within the bathtub. The bathtub is set upon in the lounge. Mila stepped out of the lounge. Olivia relocated the socks to the treasure chest. The lounge has a treasure chest in it. Mila sidled into the closet. Isabella went to the closet.",
+      "question": "Where will Mila look for the socks?",
+      "answer": "bathtub",
+      "qtype": "first_order_1_tom",
+      "order": 1,
+      "belief": "false",
+      "stratum": "order1_false",
+      "story_sha256": "3fd93672fc45caf0aa1e0974f858f40ccef2f8854f85e7d6b6c3f75b15b240d4",
+      "raw_story_sha256": "a6097ea710eaafc27af868a62b52e28cc90325fd2de535e844f47544d7bfba7e",
+      "trace_events": [
+        "enter_agent_0",
+        "enter_agent_1",
+        "agent_1_exits",
+        "agent_0_moves_obj",
+        "agent_1_reenters_alt_loc",
+        "agent_2_enters"
+      ],
+      "template_sha256": "db31f23547e1cbb20bfcdf4bbfbe7009670f02942f05241ff1bc332e2c9a80cc",
+      "scenario_type": "false_belief",
+      "candidate_answer_locations": [
+        "treasure chest",
+        "bathtub"
+      ]
+    },
+    {
+      "row_id": 4456,
+      "question_line_1based": 48646,
+      "question_index": 1,
+      "story": "Jayden went into the study. Jacob sidled into the study. The cap is inside the treasure chest. The treasure chest is set to rest in the study. Liam is shocked by the suit. Liam went into the study. Jacob quit the study. Liam took off from the study. Jayden shoved the cap into the envelope. The study has the envelope inside of it. Jayden tiptoed from the study. Liam is charmed by the potato. Jacob came by the pantry.",
+      "question": "Where will Jacob look for the cap?",
+      "answer": "treasure chest",
+      "qtype": "first_order_1_tom",
+      "order": 1,
+      "belief": "false",
+      "stratum": "order1_false",
+      "story_sha256": "04d15e5cbea9b75ed7ac5a90450ffdf3c38a09a07617092bce467be268cc6106",
+      "raw_story_sha256": "613b60a275ebcd9b5ca670e7f3cb9dc924788a5db0a801c2ac2440c30a56d00e",
+      "trace_events": [
+        "enter_agent_0",
+        "enter_agent_1",
+        "agent_1_exits",
+        "agent_2_enters",
+        "agent_0_moves_obj",
+        "agent_2_exits",
+        "agent_0_exits",
+        "agent_1_reenters_alt_loc"
+      ],
+      "template_sha256": "c38a6f451c6fcc5510a2a03f5ac343d09cc67f721f868fdf161f077d99de7dd8",
+      "scenario_type": "second_order_false_belief",
+      "candidate_answer_locations": [
+        "treasure chest",
+        "envelope",
+        "pantry"
+      ]
+    },
+    {
+      "row_id": 3869,
+      "question_line_1based": 42226,
+      "question_index": 1,
+      "story": "Jacob came by the sunroom. Oliver crept into the office. Aria approached the sunroom. The bathtub is storing the underpants inside of it. The bathtub is located in the sunroom. Jacob crawled from the sunroom. Aria conveyed the underpants to the envelope. The envelope is within the sunroom.",
+      "question": "Where will Jacob look for the underpants?",
+      "answer": "bathtub",
+      "qtype": "first_order_0_tom",
+      "order": 1,
+      "belief": "false",
+      "stratum": "order1_false",
+      "story_sha256": "d041fe8a41735c5b9b3bd820332d8b345b60c4e79c0dc966021521e564505f9d",
+      "raw_story_sha256": "6c5ebeefdc6667b58b94cd4490e6096efc092c123369f8102fc525fdccc1775b",
+      "trace_events": [
+        "enter_agent_1",
+        "agent_2_enters",
+        "enter_agent_0",
+        "agent_1_exits",
+        "agent_0_moves_obj"
+      ],
+      "template_sha256": "fc28dc9a76800fab225c2547c8752bc4e4688def9c40fcc2276a4f01ad0c275e",
+      "scenario_type": "false_belief",
+      "candidate_answer_locations": [
+        "envelope",
+        "bathtub"
+      ]
+    },
+    {
+      "row_id": 4862,
+      "question_line_1based": 53133,
+      "question_index": 1,
+      "story": "Amelia sidled into the sunroom. Isabella sidled into the sunroom. The bottle is keeping the persimmon. A bottle is in the sunroom. Amelia crawled from the sunroom. Amelia slithered into the sunroom. Isabella carried the persimmon to the container. The container is found in the sunroom.",
+      "question": "Where does Amelia think that Isabella searches for the persimmon?",
+      "answer": "container",
+      "qtype": "second_order_0_no_tom",
+      "order": 2,
+      "belief": "true",
+      "stratum": "order2_true",
+      "story_sha256": "578ffb1f0d269f62750e20a45408423d6b3a9c930cf64f14fd8db17a2314ab8f",
+      "raw_story_sha256": "e4b6dda0cd43241abfa6c7507f48e402ecd7560d7205039f25dbbd05db049644",
+      "trace_events": [
+        "enter_agent_1",
+        "enter_agent_0",
+        "agent_1_exits",
+        "agent_1_reenters_loc",
+        "agent_0_moves_obj"
+      ],
+      "template_sha256": "ed2714f9d6eaad952c1806b0e875f2566ab4f994e879325ec8f4d704ff216287",
+      "scenario_type": "true_belief",
+      "candidate_answer_locations": [
+        "container",
+        "bottle"
+      ]
+    },
+    {
+      "row_id": 337,
+      "question_line_1based": 3708,
+      "question_index": 1,
+      "story": "Emma slithered into the lounge. Alexander stepped into the lounge. The peas is stored in the crate. The lounge has a crate in it. Alexander moved the peas to the bathtub. The bathtub is stowed in the lounge. Emma is infatuated with the lime. Emma crept from the lounge. Alexander walked out of the lounge. Emma walked into the playroom.",
+      "question": "Where does Emma think that Alexander searches for the peas?",
+      "answer": "bathtub",
+      "qtype": "second_order_0_no_tom",
+      "order": 2,
+      "belief": "true",
+      "stratum": "order2_true",
+      "story_sha256": "fe474d136aec91650afdffcadefc5e3e03f969a0cdb6dedadd3e433971f52717",
+      "raw_story_sha256": "410d5503db4690b24241d98e9b81b4a1346b316641b5b7b16c7311a6b74e49aa",
+      "trace_events": [
+        "enter_agent_1",
+        "enter_agent_0",
+        "agent_0_moves_obj",
+        "agent_1_exits",
+        "agent_0_exits",
+        "agent_1_reenters_alt_loc"
+      ],
+      "template_sha256": "81f9193ed6cddf6251f3a29870c6795552cbf2bbc55a6d3980dc3989d9fe07c0",
+      "scenario_type": "second_order_false_belief",
+      "candidate_answer_locations": [
+        "bathtub",
+        "crate"
+      ]
+    },
+    {
+      "row_id": 3756,
+      "question_line_1based": 40997,
+      "question_index": 1,
+      "story": "William leapt into the hall. Isla slithered into the hall. The cherry is located in the bottle. The hall is safeguarding the bottle. Isla bolted from the hall. Isla slithered into the hall. William shoved the cherry into the drawer. The drawer is situated in the hall.",
+      "question": "Where does Isla think that William searches for the cherry?",
+      "answer": "drawer",
+      "qtype": "second_order_1_no_tom",
+      "order": 2,
+      "belief": "true",
+      "stratum": "order2_true",
+      "story_sha256": "5946a3fed6b7014ae0e3386dd59cbdc3e20dfccfc06a22b8dfaf87407300abc7",
+      "raw_story_sha256": "5c49c4ab1319342169ab6c6cda8d1014134e0dfdf75c6677de7f30d692e050e4",
+      "trace_events": [
+        "enter_agent_0",
+        "enter_agent_1",
+        "agent_1_exits",
+        "agent_1_reenters_loc",
+        "agent_0_moves_obj"
+      ],
+      "template_sha256": "9c790b91d41d9d05c45771b714cfc27a8d03c7d539b31869153056b8bf474bca",
+      "scenario_type": "true_belief",
+      "candidate_answer_locations": [
+        "bottle",
+        "drawer"
+      ]
+    },
+    {
+      "row_id": 427,
+      "question_line_1based": 4697,
+      "question_index": 1,
+      "story": "Sophia went to the TV room. James came into the TV room. The bottle has the shirt inside of it. The TV room has the bottle. Sophia hid the shirt in the crate. The crate is put in the TV room. James went out of the TV room. Sophia jogged from the TV room. Avery entered the hallway. James visited the hallway.",
+      "question": "Where does James think that Sophia searches for the shirt?",
+      "answer": "crate",
+      "qtype": "second_order_1_no_tom",
+      "order": 2,
+      "belief": "true",
+      "stratum": "order2_true",
+      "story_sha256": "0770544b4c170804258cf0b42b20e2a3793a1f0da893cb33fd991b7019aedceb",
+      "raw_story_sha256": "73e58e8a0933f4dcc2e2a2652978e4683139490d80bddcb7a8ccd06717a86144",
+      "trace_events": [
+        "enter_agent_0",
+        "enter_agent_1",
+        "agent_0_moves_obj",
+        "agent_1_exits",
+        "agent_0_exits",
+        "agent_1_reenters_alt_loc",
+        "agent_2_enters"
+      ],
+      "template_sha256": "cf15a7e2bfe1e2d8812458c0e1ee7f7db2f7b29eaea5f5980673053c403af00c",
+      "scenario_type": "second_order_false_belief",
+      "candidate_answer_locations": [
+        "bottle",
+        "crate"
+      ]
+    },
+    {
+      "row_id": 113,
+      "question_line_1based": 1279,
+      "question_index": 1,
+      "story": "Charlotte came into the hall. Sophia came to the hall. Jayden visited the hall. The gloves sickens Sophia. The pantry has the peach. The hall contains the pantry. Charlotte moved the peach to the bathtub. The bathtub is within the hall. Sophia stepped out of the hall. Jayden stepped out of the hall. Sophia would do anything for a sweatshirt. Charlotte tiptoed from the hall. Jayden went into the hall.",
+      "question": "Where does Charlotte think that Jayden searches for the peach?",
+      "answer": "bathtub",
+      "qtype": "second_order_0_no_tom",
+      "order": 2,
+      "belief": "true",
+      "stratum": "order2_true",
+      "story_sha256": "54ee7a541f84b3db710156c6c1ced142e891e75d41a1c9586072196b9fe31b39",
+      "raw_story_sha256": "d48b8553ccad9634b19c374409496dfa50efaf731a1fee25aadc7958a7fa9121",
+      "trace_events": [
+        "enter_agent_0",
+        "agent_2_enters",
+        "enter_agent_1",
+        "agent_0_moves_obj",
+        "agent_1_exits",
+        "agent_2_exits",
+        "agent_0_exits",
+        "agent_1_reenters_loc"
+      ],
+      "template_sha256": "ae1039141f6afc766763607b6798ee8a3e69407e4d3706ae09431d77a7118e96",
+      "scenario_type": "second_order_false_belief",
+      "candidate_answer_locations": [
+        "bathtub",
+        "pantry"
+      ]
+    },
+    {
+      "row_id": 4402,
+      "question_line_1based": 48053,
+      "question_index": 1,
+      "story": "Ethan is vexed by the beans. Ethan stepped into the basement. Amelia leapt into the basement. The box has the trousers. The basement is holding the box. Amelia took off from the basement. Ethan stowed the trousers in the cupboard. The cupboard is put to rest in the basement.",
+      "question": "Where does Amelia think that Ethan searches for the trousers?",
+      "answer": "box",
+      "qtype": "second_order_1_tom",
+      "order": 2,
+      "belief": "false",
+      "stratum": "order2_false",
+      "story_sha256": "7e7ef2c93274b2157ab568e119c703d908348252ae084fe2ad79bdd4c5e7f6fb",
+      "raw_story_sha256": "66baa999498951c548fdc0a84fd0fc627ca00cad59a96ae180e03afa0a43649e",
+      "trace_events": [
+        "enter_agent_0",
+        "enter_agent_1",
+        "agent_1_exits",
+        "agent_0_moves_obj"
+      ],
+      "template_sha256": "925a73b317cb08f06372183f25463dd4bd504ed16fc61b4566d5b61ac577bcd5",
+      "scenario_type": "false_belief",
+      "candidate_answer_locations": [
+        "cupboard",
+        "box"
+      ]
+    },
+    {
+      "row_id": 5913,
+      "question_line_1based": 64597,
+      "question_index": 1,
+      "story": "Aria went into the laundry. Mason bounded into the laundry. Jayden came to the laundry. Aria walked out of the laundry. The cupboard is holding the spinach. The cupboard is within the laundry. Jayden crept from the laundry. Mason relocated the spinach to the basket. The basket is put to rest in the laundry. Mason came out of the laundry. Jayden leapt into the laundry.",
+      "question": "Where does Jayden think that Mason searches for the spinach?",
+      "answer": "cupboard",
+      "qtype": "second_order_1_tom",
+      "order": 2,
+      "belief": "false",
+      "stratum": "order2_false",
+      "story_sha256": "09619a2824696ab9801d2a1499bfdfcc7d8b1adc0393a2f5ebbc387c3bfc6d09",
+      "raw_story_sha256": "2de970521ae46cb75b81d4f050b860828e43acaac2b3b124c3de2893e053f221",
+      "trace_events": [
+        "agent_2_enters",
+        "enter_agent_0",
+        "enter_agent_1",
+        "agent_2_exits",
+        "agent_1_exits",
+        "agent_0_moves_obj",
+        "agent_0_exits",
+        "agent_1_reenters_loc"
+      ],
+      "template_sha256": "af13e0bab6c6a6f10953cd7ce5cbe0e07e57b5dcc4666af5d398ab89fd7de9d0",
+      "scenario_type": "second_order_false_belief",
+      "candidate_answer_locations": [
+        "cupboard",
+        "basket"
+      ]
+    },
+    {
+      "row_id": 2972,
+      "question_line_1based": 32391,
+      "question_index": 1,
+      "story": "Isla is infatuated with the potato. Nathan shuffled into the bedroom. Benjamin sidled into the bedroom. Isla entered the workshop. The jacket is deposited in the envelope. The envelope is set in the bedroom. Isla emerged from the workshop. Benjamin walked out of the bedroom. Nathan carried the jacket to the drawer. The drawer is inside the bedroom. The eggplant offends Benjamin. Nathan sprinted from the bedroom. Benjamin came to the workshop.",
+      "question": "Where does Nathan think that Benjamin searches for the jacket?",
+      "answer": "envelope",
+      "qtype": "second_order_0_tom",
+      "order": 2,
+      "belief": "false",
+      "stratum": "order2_false",
+      "story_sha256": "64b33316bef0ac61c643fdcf424f57575b504ab2d9e9e06584f18b03f0791c63",
+      "raw_story_sha256": "6824f125fdd93f788f423b4d4a497aaeeb5b464330cf2d795739e13e3d74e8bc",
+      "trace_events": [
+        "enter_agent_0",
+        "enter_agent_1",
+        "agent_2_enters",
+        "agent_1_exits",
+        "agent_2_exits",
+        "agent_0_moves_obj",
+        "agent_0_exits",
+        "agent_1_reenters_alt_loc"
+      ],
+      "template_sha256": "96134cb632d77dea19629cb429f489aae6aebd55764f2c488cac63a8f4574898",
+      "scenario_type": "second_order_false_belief",
+      "candidate_answer_locations": [
+        "envelope",
+        "drawer"
+      ]
+    },
+    {
+      "row_id": 3850,
+      "question_line_1based": 42016,
+      "question_index": 1,
+      "story": "Hunter arrived in the crawlspace. Logan entered the crawlspace. The pantry contains the lime. The pantry is set in the crawlspace. Hunter sprinted from the crawlspace. Logan conveyed the lime to the suitcase. The suitcase is set in the crawlspace. Logan is wild about the lettuce. Logan crawled from the crawlspace. Olivia slithered into the crawlspace. Hunter tiptoed into the front yard.",
+      "question": "Where does Hunter think that Logan searches for the lime?",
+      "answer": "pantry",
+      "qtype": "second_order_0_tom",
+      "order": 2,
+      "belief": "false",
+      "stratum": "order2_false",
+      "story_sha256": "6ca03777ce6a1b0efd1839a9abb8ab9a9e3df4a536bad098169e51c388253966",
+      "raw_story_sha256": "94ba2495808bceacb3e74904a632cc493302237c694997ed4c07000dfb67694d",
+      "trace_events": [
+        "enter_agent_1",
+        "enter_agent_0",
+        "agent_1_exits",
+        "agent_0_moves_obj",
+        "agent_0_exits",
+        "agent_1_reenters_alt_loc",
+        "agent_2_enters"
+      ],
+      "template_sha256": "21df5b7b5bbdb097e8131ad64047a6ffa3121bce86e718f4af33b5a719c4c242",
+      "scenario_type": "second_order_false_belief",
+      "candidate_answer_locations": [
+        "suitcase",
+        "pantry"
+      ]
+    },
+    {
+      "row_id": 1269,
+      "question_line_1based": 13867,
+      "question_index": 1,
+      "story": "Noah arrived at the garage. Ethan entered the garage. Aria walked into the garage. The sweet potato is positioned in the suitcase. The suitcase is set upon in the garage. Noah crept from the garage. Aria pushed the sweet potato to the box. The garage is holding the box within it. Aria crawled from the garage. Noah sidled into the patio. Aria is sorrowful by the onion.",
+      "question": "Where does Noah think that Aria searches for the sweet potato?",
+      "answer": "suitcase",
+      "qtype": "second_order_0_tom",
+      "order": 2,
+      "belief": "false",
+      "stratum": "order2_false",
+      "story_sha256": "25bc46c4580614c29d71fbbeee3429541055e29ae9f25c8294593b7eb50ea266",
+      "raw_story_sha256": "c385c437791a8199a880318ca3975872a127376ff8cf8c9fc94cf56aaf964bb9",
+      "trace_events": [
+        "enter_agent_1",
+        "agent_2_enters",
+        "enter_agent_0",
+        "agent_1_exits",
+        "agent_0_moves_obj",
+        "agent_0_exits",
+        "agent_1_reenters_alt_loc"
+      ],
+      "template_sha256": "bfb7d81423c97de94755f38374236d70e2808e725ed6c1b512d21fbf2ad2be81",
+      "scenario_type": "second_order_false_belief",
+      "candidate_answer_locations": [
+        "suitcase",
+        "box"
+      ]
+    }
+  ]
+}

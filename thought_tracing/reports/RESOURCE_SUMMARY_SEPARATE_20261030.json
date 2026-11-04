@@ -1,0 +1,16 @@
+{
+  "source": "experiments/adaptive_a_v2/runs/adaptive_a_v2/resource_samples.jsonl",
+  "nvml_whole_device_used_peak_mib": 44108,
+  "nvml_samples": 12690,
+  "cuda_mem_get_info_device_used_peak_mib": 18015,
+  "cuda_samples": 8616,
+  "torch_allocator_peak_allocated_bytes": 16171606528,
+  "torch_allocator_peak_reserved_bytes": 17785946112,
+  "allocator_fields_seen": {
+    "peak_allocated_bytes": 8066,
+    "peak_reserved_bytes": 8066
+  },
+  "resource_json_parse_errors": 0,
+  "fixed_overlap_detected": false,
+  "note": "Separate NVML, CUDA admission accounting, and PyTorch allocator. WDDM residency/paging and other loads limit time/memory comparisons."
+}

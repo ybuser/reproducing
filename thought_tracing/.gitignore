@@ -1,0 +1,10 @@
+.restored/
+.venv/
+models/
+**/__pycache__/
+**/.tools/
+*.safetensors
+.env
+.env.*
+*.pem
+*.key

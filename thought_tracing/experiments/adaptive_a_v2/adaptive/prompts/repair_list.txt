@@ -1,0 +1,7 @@
+{original_prompt}
+
+The previous response did not follow the required list format:
+<previous response>
+{raw}
+</previous response>
+Return only a valid numbered list of 1 to 5 nonempty hypotheses, numbered consecutively starting at 1. Choose the count using only the evidence above. Do not pad, add unsupported details, or include a preface or conclusion.

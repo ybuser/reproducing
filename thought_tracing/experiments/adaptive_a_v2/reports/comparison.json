@@ -1,0 +1,2606 @@
+{
+  "generated_unix": 1793343121.5136826,
+  "status": "complete",
+  "cohort_size": 600,
+  "cohort_scope": "User-confirmed extension to all 600 rows of the existing fixed600 manifest",
+  "fixed4_results_read_only": true,
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "manifest_sha256": "9a0d5077398d8affed75ed4993efdb436e538e2c3089357363258427526ac2c1",
+  "methods_all_attempts": {
+    "fixed-4": {
+      "all": {
+        "planned": 600,
+        "attempted": 600,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 374,
+        "official_accuracy": 0.6233333333333333,
+        "strict_correct": 347,
+        "strict_accuracy": 0.5783333333333334,
+        "human_final_review": 49
+      },
+      "memory": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 97,
+        "official_accuracy": 0.97,
+        "strict_correct": 93,
+        "strict_accuracy": 0.93,
+        "human_final_review": 4
+      },
+      "order1_false": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 35,
+        "official_accuracy": 0.35,
+        "strict_correct": 32,
+        "strict_accuracy": 0.32,
+        "human_final_review": 9
+      },
+      "order1_true": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 86,
+        "official_accuracy": 0.86,
+        "strict_correct": 80,
+        "strict_accuracy": 0.8,
+        "human_final_review": 6
+      },
+      "order2_false": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 14,
+        "official_accuracy": 0.14,
+        "strict_correct": 11,
+        "strict_accuracy": 0.11,
+        "human_final_review": 12
+      },
+      "order2_true": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 80,
+        "official_accuracy": 0.8,
+        "strict_correct": 76,
+        "strict_accuracy": 0.76,
+        "human_final_review": 9
+      },
+      "reality": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 62,
+        "official_accuracy": 0.62,
+        "strict_correct": 55,
+        "strict_accuracy": 0.55,
+        "human_final_review": 9
+      },
+      "belief": {
+        "planned": 400,
+        "attempted": 400,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 215,
+        "official_accuracy": 0.5375,
+        "strict_correct": 199,
+        "strict_accuracy": 0.4975,
+        "human_final_review": 36
+      },
+      "false_belief": {
+        "planned": 200,
+        "attempted": 200,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 49,
+        "official_accuracy": 0.245,
+        "strict_correct": 43,
+        "strict_accuracy": 0.215,
+        "human_final_review": 21
+      },
+      "true_belief": {
+        "planned": 200,
+        "attempted": 200,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 166,
+        "official_accuracy": 0.83,
+        "strict_correct": 156,
+        "strict_accuracy": 0.78,
+        "human_final_review": 15
+      },
+      "order1": {
+        "planned": 200,
+        "attempted": 200,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 121,
+        "official_accuracy": 0.605,
+        "strict_correct": 112,
+        "strict_accuracy": 0.56,
+        "human_final_review": 15
+      },
+      "order2": {
+        "planned": 200,
+        "attempted": 200,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 94,
+        "official_accuracy": 0.47,
+        "strict_correct": 87,
+        "strict_accuracy": 0.435,
+        "human_final_review": 21
+      },
+      "qtype:first_order_0_no_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 42,
+        "official_accuracy": 0.84,
+        "strict_correct": 40,
+        "strict_accuracy": 0.8,
+        "human_final_review": 2
+      },
+      "qtype:first_order_0_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 17,
+        "official_accuracy": 0.34,
+        "strict_correct": 16,
+        "strict_accuracy": 0.32,
+        "human_final_review": 3
+      },
+      "qtype:first_order_1_no_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 44,
+        "official_accuracy": 0.88,
+        "strict_correct": 40,
+        "strict_accuracy": 0.8,
+        "human_final_review": 4
+      },
+      "qtype:first_order_1_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 18,
+        "official_accuracy": 0.36,
+        "strict_correct": 16,
+        "strict_accuracy": 0.32,
+        "human_final_review": 6
+      },
+      "qtype:memory": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 97,
+        "official_accuracy": 0.97,
+        "strict_correct": 93,
+        "strict_accuracy": 0.93,
+        "human_final_review": 4
+      },
+      "qtype:reality": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 62,
+        "official_accuracy": 0.62,
+        "strict_correct": 55,
+        "strict_accuracy": 0.55,
+        "human_final_review": 9
+      },
+      "qtype:second_order_0_no_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 45,
+        "official_accuracy": 0.9,
+        "strict_correct": 42,
+        "strict_accuracy": 0.84,
+        "human_final_review": 4
+      },
+      "qtype:second_order_0_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 6,
+        "official_accuracy": 0.12,
+        "strict_correct": 5,
+        "strict_accuracy": 0.1,
+        "human_final_review": 5
+      },
+      "qtype:second_order_1_no_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 35,
+        "official_accuracy": 0.7,
+        "strict_correct": 34,
+        "strict_accuracy": 0.68,
+        "human_final_review": 5
+      },
+      "qtype:second_order_1_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 8,
+        "official_accuracy": 0.16,
+        "strict_correct": 6,
+        "strict_accuracy": 0.12,
+        "human_final_review": 7
+      }
+    },
+    "adaptive-A": {
+      "all": {
+        "planned": 600,
+        "attempted": 600,
+        "incomplete": 0,
+        "execution_failures": 5,
+        "format_failures": 5,
+        "truncated_examples": 0,
+        "official_correct": 374,
+        "official_accuracy": 0.6233333333333333,
+        "strict_correct": 342,
+        "strict_accuracy": 0.57,
+        "human_final_review": 60
+      },
+      "memory": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 97,
+        "official_accuracy": 0.97,
+        "strict_correct": 93,
+        "strict_accuracy": 0.93,
+        "human_final_review": 4
+      },
+      "order1_false": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 38,
+        "official_accuracy": 0.38,
+        "strict_correct": 35,
+        "strict_accuracy": 0.35,
+        "human_final_review": 9
+      },
+      "order1_true": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 2,
+        "format_failures": 2,
+        "truncated_examples": 0,
+        "official_correct": 84,
+        "official_accuracy": 0.84,
+        "strict_correct": 77,
+        "strict_accuracy": 0.77,
+        "human_final_review": 10
+      },
+      "order2_false": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 2,
+        "format_failures": 2,
+        "truncated_examples": 0,
+        "official_correct": 12,
+        "official_accuracy": 0.12,
+        "strict_correct": 9,
+        "strict_accuracy": 0.09,
+        "human_final_review": 13
+      },
+      "order2_true": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 1,
+        "format_failures": 1,
+        "truncated_examples": 0,
+        "official_correct": 81,
+        "official_accuracy": 0.81,
+        "strict_correct": 73,
+        "strict_accuracy": 0.73,
+        "human_final_review": 15
+      },
+      "reality": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 62,
+        "official_accuracy": 0.62,
+        "strict_correct": 55,
+        "strict_accuracy": 0.55,
+        "human_final_review": 9
+      },
+      "belief": {
+        "planned": 400,
+        "attempted": 400,
+        "incomplete": 0,
+        "execution_failures": 5,
+        "format_failures": 5,
+        "truncated_examples": 0,
+        "official_correct": 215,
+        "official_accuracy": 0.5375,
+        "strict_correct": 194,
+        "strict_accuracy": 0.485,
+        "human_final_review": 47
+      },
+      "false_belief": {
+        "planned": 200,
+        "attempted": 200,
+        "incomplete": 0,
+        "execution_failures": 2,
+        "format_failures": 2,
+        "truncated_examples": 0,
+        "official_correct": 50,
+        "official_accuracy": 0.25,
+        "strict_correct": 44,
+        "strict_accuracy": 0.22,
+        "human_final_review": 22
+      },
+      "true_belief": {
+        "planned": 200,
+        "attempted": 200,
+        "incomplete": 0,
+        "execution_failures": 3,
+        "format_failures": 3,
+        "truncated_examples": 0,
+        "official_correct": 165,
+        "official_accuracy": 0.825,
+        "strict_correct": 150,
+        "strict_accuracy": 0.75,
+        "human_final_review": 25
+      },
+      "order1": {
+        "planned": 200,
+        "attempted": 200,
+        "incomplete": 0,
+        "execution_failures": 2,
+        "format_failures": 2,
+        "truncated_examples": 0,
+        "official_correct": 122,
+        "official_accuracy": 0.61,
+        "strict_correct": 112,
+        "strict_accuracy": 0.56,
+        "human_final_review": 19
+      },
+      "order2": {
+        "planned": 200,
+        "attempted": 200,
+        "incomplete": 0,
+        "execution_failures": 3,
+        "format_failures": 3,
+        "truncated_examples": 0,
+        "official_correct": 93,
+        "official_accuracy": 0.465,
+        "strict_correct": 82,
+        "strict_accuracy": 0.41,
+        "human_final_review": 28
+      },
+      "qtype:first_order_0_no_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 41,
+        "official_accuracy": 0.82,
+        "strict_correct": 37,
+        "strict_accuracy": 0.74,
+        "human_final_review": 5
+      },
+      "qtype:first_order_0_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 18,
+        "official_accuracy": 0.36,
+        "strict_correct": 17,
+        "strict_accuracy": 0.34,
+        "human_final_review": 2
+      },
+      "qtype:first_order_1_no_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 2,
+        "format_failures": 2,
+        "truncated_examples": 0,
+        "official_correct": 43,
+        "official_accuracy": 0.86,
+        "strict_correct": 40,
+        "strict_accuracy": 0.8,
+        "human_final_review": 5
+      },
+      "qtype:first_order_1_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 20,
+        "official_accuracy": 0.4,
+        "strict_correct": 18,
+        "strict_accuracy": 0.36,
+        "human_final_review": 7
+      },
+      "qtype:memory": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 97,
+        "official_accuracy": 0.97,
+        "strict_correct": 93,
+        "strict_accuracy": 0.93,
+        "human_final_review": 4
+      },
+      "qtype:reality": {
+        "planned": 100,
+        "attempted": 100,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 62,
+        "official_accuracy": 0.62,
+        "strict_correct": 55,
+        "strict_accuracy": 0.55,
+        "human_final_review": 9
+      },
+      "qtype:second_order_0_no_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 43,
+        "official_accuracy": 0.86,
+        "strict_correct": 38,
+        "strict_accuracy": 0.76,
+        "human_final_review": 8
+      },
+      "qtype:second_order_0_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 2,
+        "format_failures": 2,
+        "truncated_examples": 0,
+        "official_correct": 7,
+        "official_accuracy": 0.14,
+        "strict_correct": 6,
+        "strict_accuracy": 0.12,
+        "human_final_review": 7
+      },
+      "qtype:second_order_1_no_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 1,
+        "format_failures": 1,
+        "truncated_examples": 0,
+        "official_correct": 38,
+        "official_accuracy": 0.76,
+        "strict_correct": 35,
+        "strict_accuracy": 0.7,
+        "human_final_review": 7
+      },
+      "qtype:second_order_1_tom": {
+        "planned": 50,
+        "attempted": 50,
+        "incomplete": 0,
+        "execution_failures": 0,
+        "format_failures": 0,
+        "truncated_examples": 0,
+        "official_correct": 5,
+        "official_accuracy": 0.1,
+        "strict_correct": 3,
+        "strict_accuracy": 0.06,
+        "human_final_review": 6
+      }
+    }
+  },
+  "paired_normal_completed_count": 595,
+  "paired_metrics": {
+    "fixed-4": {
+      "planned": 595,
+      "attempted": 595,
+      "incomplete": 0,
+      "execution_failures": 0,
+      "format_failures": 0,
+      "truncated_examples": 0,
+      "official_correct": 371,
+      "official_accuracy": 0.6235294117647059,
+      "strict_correct": 344,
+      "strict_accuracy": 0.5781512605042017,
+      "human_final_review": 49
+    },
+    "adaptive-A": {
+      "planned": 595,
+      "attempted": 595,
+      "incomplete": 0,
+      "execution_failures": 0,
+      "format_failures": 0,
+      "truncated_examples": 0,
+      "official_correct": 374,
+      "official_accuracy": 0.6285714285714286,
+      "strict_correct": 342,
+      "strict_accuracy": 0.5747899159663865,
+      "human_final_review": 55
+    }
+  },
+  "paired_only_fixed_correct_ids": [
+    2760,
+    1280,
+    4230,
+    4735,
+    3569,
+    5483,
+    1244,
+    2720,
+    1882,
+    1161,
+    61,
+    3641,
+    4168,
+    3613,
+    3094,
+    5028,
+    905,
+    3209,
+    3932,
+    1974,
+    319,
+    4012,
+    5357,
+    3385,
+    2109,
+    207
+  ],
+  "paired_only_adaptive_correct_ids": [
+    2696,
+    5064,
+    477,
+    5363,
+    3557,
+    1661,
+    540,
+    5539,
+    5138,
+    5998,
+    45,
+    5979,
+    3821,
+    3145,
+    5059,
+    2401,
+    3338,
+    2754,
+    3716,
+    2073,
+    3694,
+    2217,
+    5566,
+    1633,
+    2484,
+    5762,
+    192,
+    3431,
+    1074
+  ],
+  "adaptive_stats": {
+    "initialized_examples": 400,
+    "initial_count_distribution": {
+      "4": 19,
+      "3": 224,
+      "2": 103,
+      "1": 49,
+      "5": 5
+    },
+    "mean_initial_count": 2.57,
+    "mean_final_count": 2.2925,
+    "mean_pre_prune_count_over_steps": 2.515418502202643,
+    "mean_survivors_over_steps": 2.393171806167401,
+    "mean_summary_hypothesis_count": 2.39,
+    "pruned_examples": 96,
+    "pruned_example_ids": [
+      2760,
+      1280,
+      1001,
+      2087,
+      799,
+      5770,
+      5496,
+      2083,
+      382,
+      4760,
+      5666,
+      2095,
+      2696,
+      477,
+      4896,
+      5363,
+      558,
+      4300,
+      2382,
+      4330,
+      3388,
+      1567,
+      2968,
+      5416,
+      599,
+      3056,
+      540,
+      5138,
+      2808,
+      5018,
+      5037,
+      4441,
+      4457,
+      724,
+      1581,
+      2711,
+      1161,
+      4998,
+      4066,
+      61,
+      2942,
+      4743,
+      2663,
+      872,
+      5215,
+      614,
+      2910,
+      4356,
+      2401,
+      3479,
+      3613,
+      4744,
+      3554,
+      5859,
+      4894,
+      2906,
+      2850,
+      2792,
+      5903,
+      774,
+      2758,
+      3209,
+      3716,
+      188,
+      984,
+      2168,
+      1084,
+      337,
+      2073,
+      2881,
+      1459,
+      1607,
+      4372,
+      218,
+      1917,
+      5370,
+      2718,
+      5535,
+      2865,
+      4523,
+      5734,
+      1340,
+      5357,
+      537,
+      3125,
+      2291,
+      2482,
+      245,
+      3912,
+      192,
+      5490,
+      3468,
+      207,
+      4371,
+      3431,
+      5330
+    ],
+    "pruned_fraction_of_initialized": 0.24,
+    "pruned_fraction_of_all_attempted": 0.16,
+    "first_prune_step_distribution_zero_based": {
+      "1": 27,
+      "2": 8,
+      "0": 59,
+      "3": 2
+    },
+    "became_or_started_single_examples": 72,
+    "became_or_started_single_fraction_of_initialized": 0.18,
+    "single_example_ids": [
+      2204,
+      2087,
+      799,
+      5496,
+      4786,
+      4760,
+      9,
+      5823,
+      2704,
+      380,
+      4735,
+      4300,
+      2968,
+      5416,
+      5939,
+      5018,
+      5922,
+      4675,
+      4559,
+      1882,
+      2570,
+      1777,
+      1446,
+      4466,
+      3641,
+      3581,
+      2946,
+      1807,
+      5215,
+      614,
+      4168,
+      2576,
+      2271,
+      3554,
+      4903,
+      3801,
+      4894,
+      3094,
+      723,
+      2792,
+      4680,
+      1113,
+      95,
+      890,
+      2168,
+      4460,
+      337,
+      2822,
+      3333,
+      2186,
+      5759,
+      4372,
+      989,
+      5370,
+      1055,
+      4292,
+      5535,
+      2592,
+      2217,
+      5357,
+      537,
+      2484,
+      2631,
+      2607,
+      824,
+      3510,
+      3336,
+      3301,
+      5490,
+      3468,
+      1642,
+      4371
+    ],
+    "deleted_hypotheses_by_evaluator_type": {
+      "action_likelihood": 102,
+      "state_only_plausibility": 9
+    },
+    "logical_completed_step_hypothesis_evaluations": 2284,
+    "logical_completed_step_batch_interface_calls": 908,
+    "trajectory_step_count": 908,
+    "bypassed_examples": 200,
+    "summary_top_p_distinct_from_pruning": true,
+    "mean_counts_by_trajectory_step": {
+      "0": {
+        "examples_reaching_step": 400,
+        "mean_before_evaluation": 2.57,
+        "mean_after_pruning": 2.405
+      },
+      "1": {
+        "examples_reaching_step": 295,
+        "mean_before_evaluation": 2.5559322033898306,
+        "mean_after_pruning": 2.454237288135593
+      },
+      "2": {
+        "examples_reaching_step": 172,
+        "mean_before_evaluation": 2.383720930232558,
+        "mean_after_pruning": 2.3197674418604652
+      },
+      "3": {
+        "examples_reaching_step": 38,
+        "mean_before_evaluation": 2.3157894736842106,
+        "mean_after_pruning": 2.210526315789474
+      },
+      "4": {
+        "examples_reaching_step": 3,
+        "mean_before_evaluation": 1.3333333333333333,
+        "mean_after_pruning": 1.3333333333333333
+      }
+    }
+  },
+  "compute_cohort_all_attempts": {
+    "fixed-4": {
+      "calls": 8813,
+      "failed_calls": 0,
+      "input_tokens": 3113752,
+      "output_tokens": 777841,
+      "total_tokens": 3891593,
+      "call_wall_seconds": 45529.26599999989,
+      "truncated_calls": 0,
+      "partial_output_tokens_resource_interruptions": 0,
+      "actual_inference_requests_by_stage_all_attempts": {
+        "tt.target": 400,
+        "tt.action_label": 400,
+        "tt.perception": 1402,
+        "tt.initialize": 400,
+        "tt.likelihood": 2292,
+        "tt.propagate": 2052,
+        "tt.summary": 913,
+        "final": 600,
+        "tt.initial_agent_state": 346,
+        "tt.rejuvenate": 8
+      },
+      "actual_evaluation_inference_requests_all_attempts": 2292,
+      "batch_interface_calls_all_attempts": 0,
+      "failed_generation_tokens_may_be_unknown": false
+    },
+    "adaptive-A": {
+      "calls": 8011,
+      "failed_calls": 2,
+      "input_tokens": 2926875,
+      "output_tokens": 636593,
+      "total_tokens": 3563468,
+      "call_wall_seconds": 30099.929999999746,
+      "truncated_calls": 0,
+      "partial_output_tokens_resource_interruptions": 17,
+      "actual_inference_requests_by_stage_all_attempts": {
+        "tt.target": 400,
+        "tt.action_label": 400,
+        "tt.perception": 1402,
+        "tt.initialize": 400,
+        "tt.likelihood": 1503,
+        "tt.propagate": 1270,
+        "adaptive.state_only_plausibility": 794,
+        "tt.summary": 901,
+        "final": 595,
+        "tt.initial_agent_state": 346
+      },
+      "actual_evaluation_inference_requests_all_attempts": 2297,
+      "batch_interface_calls_all_attempts": 1833,
+      "failed_generation_tokens_may_be_unknown": true
+    }
+  },
+  "compute_adaptive_smoke_and_connectivity": {
+    "calls": 55,
+    "failed_calls": 0,
+    "input_tokens": 19738,
+    "output_tokens": 4304,
+    "total_tokens": 24042,
+    "call_wall_seconds": 240.15999999999985,
+    "truncated_calls": 0,
+    "partial_output_tokens_resource_interruptions": 0,
+    "actual_inference_requests_by_stage_all_attempts": {
+      "tt.target": 2,
+      "tt.action_label": 2,
+      "tt.perception": 9,
+      "tt.initial_agent_state": 1,
+      "tt.initialize": 2,
+      "tt.likelihood": 15,
+      "tt.propagate": 12,
+      "adaptive.state_only_plausibility": 3,
+      "tt.summary": 6,
+      "final": 2,
+      "connectivity": 1
+    },
+    "actual_evaluation_inference_requests_all_attempts": 18,
+    "batch_interface_calls_all_attempts": 12,
+    "failed_generation_tokens_may_be_unknown": false
+  },
+  "fixed_overlap_detected": false,
+  "resource_sample_count": 12692,
+  "gpu_used_peak_mib_whole_device": 44056,
+  "manual_review_queue": [
+    {
+      "row_id": 2760,
+      "method": "adaptive-A",
+      "prediction": "The TV room in the house",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 799,
+      "method": "fixed-4",
+      "prediction": "James will look for the coat in the drawer in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 799,
+      "method": "adaptive-A",
+      "prediction": "from the drawer in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 746,
+      "method": "fixed-4",
+      "prediction": "from the container in the bathtub in the lounge",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 746,
+      "method": "adaptive-A",
+      "prediction": "from the container in the bathtub in the lounge",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5831,
+      "method": "fixed-4",
+      "prediction": "Ethan thinks that Isabella searches for the broccoli in the pantry in the container.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5831,
+      "method": "adaptive-A",
+      "prediction": "Ethan thinks that Isabella searches for the broccoli in the container in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5167,
+      "method": "fixed-4",
+      "prediction": "Benjamin will look for the slacks in the envelope in the pantry of the master bedroom.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5892,
+      "method": "adaptive-A",
+      "prediction": "Ella thinks that William placed the boots in the cupboard, which is inside the playroom.",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5064,
+      "method": "fixed-4",
+      "prediction": "TV room in the TV room",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1243,
+      "method": "fixed-4",
+      "prediction": "master bedroom in the dining room",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4735,
+      "method": "adaptive-A",
+      "prediction": "workshop in the kitchen",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3569,
+      "method": "adaptive-A",
+      "prediction": "The master bedroom.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3557,
+      "method": "fixed-4",
+      "prediction": "Owen thinks Alexander searches for the pants in the garden.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4330,
+      "method": "fixed-4",
+      "prediction": "drawer in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4330,
+      "method": "adaptive-A",
+      "prediction": "Avery's drawer in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5733,
+      "method": "adaptive-A",
+      "prediction": "from the closet",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 132,
+      "method": "fixed-4",
+      "prediction": "From the crate in the cellar to the suitcase in the cellar",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 132,
+      "method": "adaptive-A",
+      "prediction": "From the crate in the cellar to the suitcase in the cellar",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5416,
+      "method": "adaptive-A",
+      "prediction": null,
+      "reasons": [
+        "execution_error"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 599,
+      "method": "fixed-4",
+      "prediction": "A cupboard in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 599,
+      "method": "adaptive-A",
+      "prediction": "A cupboard in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 981,
+      "method": "fixed-4",
+      "prediction": "in the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 981,
+      "method": "adaptive-A",
+      "prediction": "in the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5788,
+      "method": "adaptive-A",
+      "prediction": null,
+      "reasons": [
+        "execution_error"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2143,
+      "method": "fixed-4",
+      "prediction": "from the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2143,
+      "method": "adaptive-A",
+      "prediction": "from the box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2720,
+      "method": "adaptive-A",
+      "prediction": "The basement",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4868,
+      "method": "fixed-4",
+      "prediction": "from the envelope in the pantry in the garden",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4868,
+      "method": "adaptive-A",
+      "prediction": "from the envelope in the pantry in the garden",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2196,
+      "method": "fixed-4",
+      "prediction": "from the crate in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2196,
+      "method": "adaptive-A",
+      "prediction": "from the crate in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2100,
+      "method": "fixed-4",
+      "prediction": "The crawlspace.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2100,
+      "method": "adaptive-A",
+      "prediction": "The crawlspace in the patio",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2299,
+      "method": "adaptive-A",
+      "prediction": null,
+      "reasons": [
+        "execution_error"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2681,
+      "method": "adaptive-A",
+      "prediction": "Jackson transported the coat to the bathtub in the hall. Therefore, Hannah thinks that Jackson searches for the coat in the bathtub in the hall.",
+      "reasons": [
+        "multiple_sentences",
+        "coordination_or_list_requires_review"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4522,
+      "method": "adaptive-A",
+      "prediction": "Aria thinks that Lily searches for the pumpkin in the workshop.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 146,
+      "method": "adaptive-A",
+      "prediction": "Aiden thinks Jacob searches for the undershirt in the sunroom.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3408,
+      "method": "adaptive-A",
+      "prediction": "Logan stored the strawberry in the drawer in the den. Jayden thinks that Logan searches for the strawberry in the drawer in the den.",
+      "reasons": [
+        "multiple_sentences"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3779,
+      "method": "fixed-4",
+      "prediction": "bathroom",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1843,
+      "method": "fixed-4",
+      "prediction": "The closet in the sunroom",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4863,
+      "method": "fixed-4",
+      "prediction": "bottle in pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4863,
+      "method": "adaptive-A",
+      "prediction": "Isla will look for the raincoat in the bottle in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3366,
+      "method": "adaptive-A",
+      "prediction": "The container in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1370,
+      "method": "fixed-4",
+      "prediction": "from the bottle in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1370,
+      "method": "adaptive-A",
+      "prediction": "from the bottle in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4668,
+      "method": "fixed-4",
+      "prediction": "basement in the playroom",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4668,
+      "method": "adaptive-A",
+      "prediction": "basement in the playroom",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2910,
+      "method": "fixed-4",
+      "prediction": "From the bottle in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2910,
+      "method": "adaptive-A",
+      "prediction": "In the bottle in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4168,
+      "method": "adaptive-A",
+      "prediction": "Bathroom in the front yard",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5059,
+      "method": "adaptive-A",
+      "prediction": "Charlotte thinks that Evelyn searches for the belt in the container in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 315,
+      "method": "fixed-4",
+      "prediction": "The skirt is in the crate in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 315,
+      "method": "adaptive-A",
+      "prediction": "Noah will look for the skirt in the crate in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4669,
+      "method": "fixed-4",
+      "prediction": "from the bottle in the box in the closet",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4669,
+      "method": "adaptive-A",
+      "prediction": "from the bottle in the box in the closet",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5084,
+      "method": "fixed-4",
+      "prediction": "The dress is really in the box in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5084,
+      "method": "adaptive-A",
+      "prediction": "The dress is really in the box in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1626,
+      "method": "fixed-4",
+      "prediction": "The cabbage is in the container in the cupboard in the kitchen.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1626,
+      "method": "adaptive-A",
+      "prediction": "The cabbage is in the container in the cupboard in the kitchen.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5814,
+      "method": "fixed-4",
+      "prediction": "from the envelope in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5814,
+      "method": "adaptive-A",
+      "prediction": "from the envelope in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1854,
+      "method": "fixed-4",
+      "prediction": "The hat was in the suitcase in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1854,
+      "method": "adaptive-A",
+      "prediction": "The hat was in the suitcase in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3729,
+      "method": "adaptive-A",
+      "prediction": "The persimmon is in the box in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4894,
+      "method": "fixed-4",
+      "prediction": "Jacob thinks that Olivia searches for the turnip in both the container and the box in the lounge.",
+      "reasons": [
+        "multiple_locations",
+        "ambiguous_or_negated"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4894,
+      "method": "adaptive-A",
+      "prediction": "Jacob thinks that Olivia searches for the turnip in both the container and the box in the lounge.",
+      "reasons": [
+        "multiple_locations",
+        "ambiguous_or_negated"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2754,
+      "method": "fixed-4",
+      "prediction": "master bedroom in the master bedroom",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 213,
+      "method": "fixed-4",
+      "prediction": "From the crate in the bathtub in the bedroom.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 213,
+      "method": "adaptive-A",
+      "prediction": "From the crate in the bathtub in the bedroom.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 774,
+      "method": "adaptive-A",
+      "prediction": "crawlspace, in the container",
+      "reasons": [
+        "coordination_or_list_requires_review"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3497,
+      "method": "fixed-4",
+      "prediction": "A box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3497,
+      "method": "adaptive-A",
+      "prediction": "A box in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3716,
+      "method": "adaptive-A",
+      "prediction": "Ella placed the melon in the envelope in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5665,
+      "method": "fixed-4",
+      "prediction": "from the suitcase in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5665,
+      "method": "adaptive-A",
+      "prediction": "from the suitcase in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2168,
+      "method": "fixed-4",
+      "prediction": "from the suitcase in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2168,
+      "method": "adaptive-A",
+      "prediction": "Evelyn thinks Mia believes the undershirt is in the suitcase in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3763,
+      "method": "fixed-4",
+      "prediction": "closet in the closet",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2073,
+      "method": "fixed-4",
+      "prediction": "The grapes are in the bucket in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2073,
+      "method": "adaptive-A",
+      "prediction": "The grapes are in the treasure chest in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5133,
+      "method": "adaptive-A",
+      "prediction": null,
+      "reasons": [
+        "execution_error"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3333,
+      "method": "fixed-4",
+      "prediction": "Charlotte thinks the belt is in the container in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3333,
+      "method": "adaptive-A",
+      "prediction": "container in pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1201,
+      "method": "fixed-4",
+      "prediction": "from the bathtub in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1201,
+      "method": "adaptive-A",
+      "prediction": "from the bathtub in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1088,
+      "method": "fixed-4",
+      "prediction": "The peach is inside the crate in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1088,
+      "method": "adaptive-A",
+      "prediction": "The peach is inside the crate in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 5759,
+      "method": "fixed-4",
+      "prediction": "bathroom in the lounge",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 218,
+      "method": "adaptive-A",
+      "prediction": null,
+      "reasons": [
+        "execution_error"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3754,
+      "method": "fixed-4",
+      "prediction": "back yard",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3754,
+      "method": "adaptive-A",
+      "prediction": "Back yard",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3694,
+      "method": "fixed-4",
+      "prediction": "bathhtub in crawlspace",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1917,
+      "method": "fixed-4",
+      "prediction": "Ava thinks that Nathan searches for the slacks in the closet.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1917,
+      "method": "adaptive-A",
+      "prediction": "closet in the closet",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 298,
+      "method": "adaptive-A",
+      "prediction": "Owen searched for the grapes in the crawlspace, and Logan thinks Owen left the grapes in the container in the crawlspace.",
+      "reasons": [
+        "ambiguous_or_negated",
+        "coordination_or_list_requires_review"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2718,
+      "method": "fixed-4",
+      "prediction": "The undershirt is in the treasure chest in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2718,
+      "method": "adaptive-A",
+      "prediction": "treasure chest in pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 4012,
+      "method": "fixed-4",
+      "prediction": "from the bottle in the crawlspace to the container in the crawlspace",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1717,
+      "method": "fixed-4",
+      "prediction": "from the drawer in the pantry",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1717,
+      "method": "adaptive-A",
+      "prediction": "William will look for the slacks in the drawer in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3524,
+      "method": "fixed-4",
+      "prediction": "The tangerine is in the cupboard in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3524,
+      "method": "adaptive-A",
+      "prediction": "The tangerine is in the cupboard in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1840,
+      "method": "fixed-4",
+      "prediction": "The sweatshirt is in the basket in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 1840,
+      "method": "adaptive-A",
+      "prediction": "The sweatshirt is in the basket in the pantry.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3912,
+      "method": "fixed-4",
+      "prediction": "The garden in the master bedroom",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 3912,
+      "method": "adaptive-A",
+      "prediction": "master bedroom in the house",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2109,
+      "method": "adaptive-A",
+      "prediction": "The dining room.",
+      "reasons": [
+        "no_known_location"
+      ],
+      "intermediate_review_completed": false
+    },
+    {
+      "row_id": 2197,
+      "method": "fixed-4",
+      "prediction": "The container with the dress is in the drawer in the staircase.",
+      "reasons": [
+        "multiple_locations"
+      ],
+      "intermediate_review_completed": false
+    }
+  ],
+  "intermediate_semantic_review": "pending; final correctness does not verify intermediate hypotheses",
+  "limits": [
+    "variable initial count + pruning + disabled resampling/rejuvenation + state-only evaluation are a bundled intervention",
+    "deleted hypotheses cannot return",
+    "one remaining hypothesis always has normalized weight 1",
+    "relative weight depends on candidate count and cannot detect all candidates being poor",
+    "action likelihood and state-only plausibility share labels but are not calibrated to the same probability",
+    "same seed does not guarantee identical outputs with different RNG consumption",
+    "local Qwen7B cohort is not reproduction of all paper benchmark/model conditions",
+    "overlapping GPU workloads invalidate wall-clock-only speedup claims; whole-device samples can include other applications"
+  ],
+  "adaptive_worker_time": {
+    "closed_attempt_active_wall_seconds": 32479.472509145737,
+    "first_start_unix": 1793064359.6609435,
+    "last_end_unix": 1793343083.2054899,
+    "model_load_seconds_all_attempts": 36.703000000010434,
+    "includes_smoke_and_loading": true,
+    "queue_wait_time_excluded": true,
+    "open_attempt_elapsed_at_report_seconds": 0,
+    "total_elapsed_at_report_seconds": 32479.472509145737,
+    "as_of_unix": 1793343121.5136826
+  },
+  "process_memory_peak_bytes": 8258801664,
+  "system_ram_available_min_bytes": 62195220480,
+  "full_experiment_planned_items": 600,
+  "report_scope": "full_cohort",
+  "reported_ids_in_manifest_order": [
+    2760,
+    3644,
+    1538,
+    248,
+    5607,
+    2096,
+    5986,
+    2204,
+    1280,
+    1001,
+    4101,
+    2491,
+    2087,
+    5058,
+    1797,
+    2175,
+    4084,
+    799,
+    4752,
+    976,
+    1035,
+    1896,
+    4644,
+    1189,
+    1909,
+    5770,
+    746,
+    5496,
+    4786,
+    3911,
+    4737,
+    5831,
+    1838,
+    2083,
+    822,
+    2985,
+    3396,
+    4070,
+    382,
+    4760,
+    9,
+    5167,
+    5323,
+    4230,
+    5666,
+    2095,
+    5892,
+    5823,
+    5969,
+    793,
+    5247,
+    2696,
+    2704,
+    4380,
+    5242,
+    1827,
+    5064,
+    655,
+    3766,
+    4329,
+    477,
+    4896,
+    3225,
+    4553,
+    4780,
+    5441,
+    2659,
+    1243,
+    5932,
+    3214,
+    1314,
+    5260,
+    380,
+    3585,
+    4082,
+    5363,
+    2492,
+    4735,
+    5598,
+    3569,
+    4298,
+    3826,
+    1644,
+    2123,
+    558,
+    4300,
+    3557,
+    2382,
+    476,
+    4330,
+    5945,
+    5819,
+    1661,
+    3388,
+    1980,
+    5966,
+    365,
+    1173,
+    994,
+    1121,
+    1567,
+    4171,
+    925,
+    5833,
+    5733,
+    2968,
+    132,
+    5416,
+    1841,
+    5459,
+    5939,
+    1268,
+    364,
+    599,
+    981,
+    2496,
+    4183,
+    2343,
+    3056,
+    5427,
+    3816,
+    5691,
+    4370,
+    2182,
+    540,
+    726,
+    5788,
+    5483,
+    4078,
+    299,
+    4853,
+    5539,
+    4629,
+    5929,
+    5138,
+    2780,
+    2539,
+    5738,
+    1509,
+    2808,
+    5018,
+    1244,
+    608,
+    1065,
+    2143,
+    617,
+    4871,
+    5922,
+    5893,
+    2544,
+    5849,
+    4087,
+    5443,
+    2154,
+    2720,
+    4675,
+    3139,
+    4868,
+    1999,
+    1799,
+    1424,
+    2014,
+    3483,
+    2511,
+    1033,
+    5037,
+    3307,
+    1895,
+    2503,
+    4559,
+    4441,
+    2196,
+    1882,
+    5258,
+    495,
+    5998,
+    4457,
+    2570,
+    5057,
+    5228,
+    2823,
+    2896,
+    2100,
+    724,
+    3559,
+    1581,
+    4159,
+    4422,
+    2711,
+    1810,
+    4400,
+    2299,
+    2988,
+    3110,
+    5769,
+    1161,
+    1777,
+    5761,
+    4998,
+    4066,
+    2681,
+    1446,
+    2613,
+    5726,
+    2697,
+    61,
+    4522,
+    4997,
+    2942,
+    4743,
+    4108,
+    5336,
+    4466,
+    658,
+    146,
+    2663,
+    3641,
+    3408,
+    872,
+    3581,
+    4754,
+    3779,
+    5964,
+    45,
+    5979,
+    5505,
+    2946,
+    1945,
+    500,
+    3219,
+    1843,
+    1807,
+    2124,
+    5215,
+    5898,
+    4863,
+    1967,
+    3366,
+    5204,
+    1370,
+    4668,
+    4990,
+    3821,
+    5600,
+    1295,
+    2802,
+    1399,
+    3633,
+    1091,
+    426,
+    352,
+    3145,
+    517,
+    614,
+    420,
+    381,
+    2910,
+    4168,
+    5059,
+    1637,
+    1612,
+    2153,
+    315,
+    3480,
+    2930,
+    4356,
+    2401,
+    2576,
+    3479,
+    704,
+    1073,
+    4669,
+    4515,
+    5238,
+    1004,
+    5411,
+    3645,
+    3660,
+    263,
+    2044,
+    5084,
+    4824,
+    474,
+    3338,
+    2765,
+    785,
+    3613,
+    3745,
+    2354,
+    3783,
+    4744,
+    2794,
+    1422,
+    5471,
+    1119,
+    4809,
+    1126,
+    1626,
+    2176,
+    3980,
+    2271,
+    3213,
+    4122,
+    3803,
+    3160,
+    5814,
+    995,
+    3554,
+    5859,
+    131,
+    5349,
+    4903,
+    3148,
+    3721,
+    5022,
+    3801,
+    1877,
+    115,
+    1747,
+    1854,
+    1715,
+    3729,
+    5286,
+    4894,
+    137,
+    3538,
+    927,
+    2754,
+    5007,
+    3094,
+    723,
+    2906,
+    3563,
+    5066,
+    1313,
+    2524,
+    803,
+    2051,
+    2850,
+    213,
+    4223,
+    4498,
+    5647,
+    5229,
+    2792,
+    3290,
+    1959,
+    5028,
+    552,
+    4680,
+    314,
+    4208,
+    3752,
+    5937,
+    5903,
+    774,
+    1588,
+    905,
+    5584,
+    1113,
+    2758,
+    5113,
+    5038,
+    6003,
+    5658,
+    95,
+    3209,
+    3598,
+    890,
+    4859,
+    3497,
+    6002,
+    2577,
+    290,
+    2895,
+    5685,
+    3746,
+    3594,
+    893,
+    42,
+    3932,
+    5488,
+    518,
+    3716,
+    5601,
+    4714,
+    188,
+    1172,
+    4943,
+    3022,
+    5665,
+    628,
+    3282,
+    2120,
+    984,
+    3006,
+    2168,
+    3763,
+    10,
+    4023,
+    1084,
+    5263,
+    4460,
+    4857,
+    337,
+    4601,
+    2073,
+    5766,
+    4164,
+    3643,
+    1458,
+    2801,
+    2619,
+    439,
+    3142,
+    2822,
+    5123,
+    1420,
+    701,
+    2881,
+    2649,
+    1726,
+    5754,
+    1852,
+    2132,
+    1459,
+    3730,
+    4932,
+    222,
+    3177,
+    4537,
+    923,
+    5728,
+    3319,
+    5289,
+    5603,
+    5708,
+    5108,
+    1109,
+    4126,
+    3558,
+    2834,
+    3167,
+    1229,
+    3335,
+    1974,
+    3691,
+    2647,
+    2671,
+    1831,
+    1971,
+    252,
+    3288,
+    2769,
+    5133,
+    2306,
+    4196,
+    3720,
+    3333,
+    2186,
+    729,
+    547,
+    1607,
+    5564,
+    4481,
+    3991,
+    1201,
+    2377,
+    1088,
+    3884,
+    5759,
+    1472,
+    5595,
+    2236,
+    2689,
+    815,
+    3584,
+    646,
+    4394,
+    2075,
+    334,
+    2725,
+    4372,
+    1595,
+    1780,
+    4271,
+    3477,
+    1445,
+    613,
+    218,
+    653,
+    2244,
+    989,
+    3877,
+    1589,
+    5513,
+    97,
+    379,
+    5911,
+    1139,
+    5593,
+    3754,
+    2893,
+    319,
+    5068,
+    2288,
+    3694,
+    2081,
+    1436,
+    1917,
+    298,
+    5370,
+    15,
+    993,
+    5181,
+    2826,
+    1055,
+    4425,
+    2718,
+    1635,
+    5176,
+    775,
+    220,
+    4114,
+    3060,
+    4292,
+    5535,
+    3265,
+    2865,
+    4523,
+    4012,
+    1800,
+    4086,
+    2592,
+    1717,
+    31,
+    5734,
+    3420,
+    680,
+    804,
+    1182,
+    1340,
+    4828,
+    2217,
+    1599,
+    5357,
+    2246,
+    5566,
+    537,
+    5137,
+    3961,
+    3125,
+    3385,
+    3524,
+    2291,
+    1633,
+    2484,
+    2631,
+    5198,
+    3368,
+    1767,
+    2482,
+    1840,
+    5637,
+    5762,
+    2607,
+    4777,
+    1137,
+    245,
+    3912,
+    824,
+    2517,
+    2457,
+    2889,
+    3510,
+    3336,
+    192,
+    3301,
+    4545,
+    5490,
+    3468,
+    2109,
+    3657,
+    1642,
+    5825,
+    2331,
+    4711,
+    2740,
+    207,
+    2197,
+    2242,
+    4371,
+    1017,
+    3431,
+    5330,
+    1074,
+    2015,
+    1002,
+    2415,
+    3605
+  ]
+}
